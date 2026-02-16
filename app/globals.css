@@ -4,6 +4,8 @@
   --color-primary: #f59e0b; /* Orange Basket */
   --color-secondary: #111827; /* Dark Grey/Black */
   --font-sans: 'Inter', system-ui, sans-serif;
+  --color-dbl-blue: #005596;
+  --color-dbl-orange: #f58220;
 }
 
 :root {
