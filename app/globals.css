@@ -1,11 +1,23 @@
 @import "tailwindcss";
 
 @theme {
+  --font-montserrat: var(--font-montserrat);
   --color-primary: #f59e0b; /* Orange Basket */
   --color-secondary: #111827; /* Dark Grey/Black */
   --font-sans: 'Inter', system-ui, sans-serif;
-  --color-dbl-blue: #005596;
+  --color-dbl-blue: #000a2a;
   --color-dbl-orange: #f58220;
+}
+
+body {
+  font-family: var(--font-montserrat);
+}
+
+/* Heading menggunakan Montserrat Bold */
+h1, h2, h3, h4 {
+  font-family: var(--font-montserrat);
+  font-weight: 800; /* Extra Bold untuk kesan sporty */
+  text-transform: uppercase;
 }
 
 :root {

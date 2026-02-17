@@ -9,8 +9,8 @@ export default function Home() {
       <Hero />
 
       {/* 2. Stats Section (Ringkasan Cepat) */}
-      <section className="bg-primary py-10">
-        <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-secondary font-black uppercase">
+      <section className="bg-gray-50 py-10">
+        <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-primary font-black uppercase">
           <div>
             <div className="text-4xl">500+</div>
             <div className="text-sm">Active Students</div>
