@@ -50,7 +50,7 @@ export default function Navbar() {
                   ? 'opacity-100 visible translate-y-0' 
                   : 'opacity-0 invisible -translate-y-4'}`}
               >
-                <Link href="/sponsor" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 transition-colors">Sponsor</Link>
+                <Link href="#partners" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 transition-colors">Partners</Link>
                 <Link href="/coach" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 transition-colors">Our Coach</Link>
                 <Link href="/location" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 transition-colors">Location</Link>
                 <Link href="/contact" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors">Contact</Link>

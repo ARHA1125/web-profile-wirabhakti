@@ -1,3 +1,4 @@
+import Partners from "@/src/components/home/Partners";
 import Hero from "../src/components/home/Hero";
 import ProgramCard from "../src/components/home/ProgramCard";
 import { PROGRAMS } from "../src/constants/Index";
@@ -34,7 +35,7 @@ export default function Home() {
       <section id="programs" className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
-            <h2 className="text-4xl font-black text-secondary uppercase italic">Pilih Program Kamu</h2>
+            <h3 className="text-5xl font-bold mt-2 text-secondary">Pilih Program Kamu</h3>
             <div className="w-24 h-2 bg-primary mx-auto mt-4"></div>
           </div>
           
@@ -45,8 +46,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* 4. CTA Section */}
+      
+      {/* 4. Partners Section */}
+      <Partners />
+      
+      {/* 5. CTA Section */}
       <section className="py-20 bg-secondary text-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 italic">Mulai Perjalananmu Menjadi Pro Sekarang!</h2>

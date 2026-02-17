@@ -22,7 +22,7 @@ export default function Hero() {
           Wirabhakti Basket Akademi mencetak atlet yang tangguh, berkarakter, dan siap bersaing di level tertinggi.
         </p>
         <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center">
-          <button className="bg-secondary hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 uppercase cursor-pointer">
+          <button className="bg-primary hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 uppercase cursor-pointer">
             Daftar Sekarang
           </button>
           <button className="border-2 border-white text-white hover:bg-white hover:text-secondary font-bold py-4 px-8 rounded-full transition-all uppercase cursor-pointer">
