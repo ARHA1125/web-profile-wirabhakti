@@ -32,8 +32,8 @@ RUN chown nextjs:nodejs .next
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-# COPY --from=builder --chown=nextjs:nodejs /landing/.next/standalone ./
-# COPY --from=builder --chown=nextjs:nodejs /landing/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /landing/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /landing/.next/static ./.next/static
 
 # Copy public folder for static assets
 COPY --from=builder --chown=nextjs:nodejs /landing/public ./public
