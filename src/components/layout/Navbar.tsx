@@ -81,7 +81,7 @@ export default function Navbar() {
             <Link href="/gallery" className="font-montserrat text-[12px] hover:text-dbl-orange transition">Gallery</Link>
             <Link href="#programs" className="font-montserrat text-[12px] hover:text-dbl-orange transition">Our Programs</Link>
             
-            <Link href="/login" className="flex items-center gap-2 border-l pl-6 border-white/30 ml-4">
+            <Link href="https://app.wirabhakti.my.id/login" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border-l pl-6 border-white/30 ml-4">
                <span className="bg-white p-1.5 rounded-full text-sm">👤</span>
             </Link>
           </div>
