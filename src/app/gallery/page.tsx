@@ -12,14 +12,14 @@ const GALLERY_IMAGES = [
 
 export default function GalleryPage() {
   return (
-    <main className="min-h-screen bg-secondary pt-32 pb-20">
+    <main className="min-h-screen bg-white pt-32 pb-20">
       <div className="container mx-auto px-4">
         {/* Header Gallery */}
         <div className="text-center mb-16">
-          <h1 className="text-2xl md:text-5xl font-black text-white uppercase tracking-tighter">
-            Our <span className="text-primary">Gallery</span>
+          <h1 className="text-2xl md:text-5xl font-black text-secondary uppercase tracking-tighter">
+            Our <span className="text-dbl-orange">Gallery</span>
           </h1>
-          <div className="w-24 h-2 bg-primary mx-auto mt-4 rounded-full"></div>
+          <div className="w-24 h-2 bg-dbl-orange mx-auto mt-4 rounded-full"></div>
           {/* <p className="mt-6 text-gray-600 font-montserrat max-w-2xl mx-auto font-medium">
             Momen-momen terbaik perjalanan atlet Wirabhakti Basket Akademi dalam meraih prestasi dan pengembangan diri.
           </p> */}

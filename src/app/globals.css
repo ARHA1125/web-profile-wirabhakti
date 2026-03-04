@@ -3,7 +3,7 @@
 @theme {
   --font-montserrat: var(--font-montserrat);
   --color-primary: #fcac04; /* Orange Basket */
-  --color-secondary: #333333; /* Dark Grey/Black */
+  --color-secondary: #000a2a; /* Dark Grey/Black */
   --font-sans: 'Inter', system-ui, sans-serif;
   --color-dbl-blue: #000a2a;
   --color-dbl-orange: #f58220;

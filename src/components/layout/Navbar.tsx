@@ -53,7 +53,7 @@ export default function Navbar() {
                 <Link href="#partners" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 transition-colors">Partners</Link>
                 <Link href="/coach" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 transition-colors">Our Coach</Link>
                 <Link href="/location" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 transition-colors">Location</Link>
-                <Link href="/contact" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors">Contact</Link>
+                <Link href="/" className="block px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors">Contact</Link>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ export default function Navbar() {
           {/* Menu Kanan */}
           <div className="hidden md:flex flex-1 justify-start items-center gap-8 pl-20 text-white font-bold text-xs uppercase tracking-wider">
             <Link href="/gallery" className="hover:text-dbl-orange transition">Gallery</Link>
-            <Link href="#programs" className="font-montserrat text-[12px] hover:text-dbl-orange transition">Our Programs</Link>
+            <Link href="/programs" className="font-montserrat text-[12px] hover:text-dbl-orange transition">Our Programs</Link>
             
             <Link href="https://app.wirabhakti.my.id/login" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border-l pl-6 border-white/30 ml-4">
                <span className="bg-white p-1.5 rounded-full text-sm">👤</span>

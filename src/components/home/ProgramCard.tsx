@@ -15,7 +15,7 @@ export default function ProgramCard({ title, age, desc, image }: ProgramProps) {
         <span className="text-primary font-bold text-sm uppercase">{age}</span>
         <h3 className="text-2xl font-bold mt-2 text-secondary">{title}</h3>
         <p className="mt-3 text-gray-600">{desc}</p>
-        <a href="/gallery" className="block mt-6">
+        <a href="/programs" className="block mt-6">
           <button className="mt-6 font-bold text-secondary border-b-2 border-primary inline-block hover:text-primary transition-colors">
             Lihat Detail
           </button>

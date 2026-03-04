@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-secondary">
+    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image menggunakan Next.js Image untuk optimasi */}
       <div className="absolute inset-0 z-0">
         <Image 
@@ -27,9 +27,9 @@ export default function Hero() {
                 Daftar Sekarang
             </button>
           </a>
-          <button className="border-2 border-white text-white hover:bg-white hover:text-secondary font-bold py-4 px-8 rounded-full transition-all uppercase cursor-pointer">
+          {/* <button className="border-2 border-white text-white hover:bg-white hover:text-secondary font-bold py-4 px-8 rounded-full transition-all uppercase cursor-pointer">
             Jadwal Trial Gratis
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
 
       {/* 2. Stats Section (Ringkasan Cepat) */}
-      <section className="bg-secondary py-10">
+      <section className="bg-white py-10">
         <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-primary font-bold uppercase">
           <div>
             <div className="text-4xl">74+</div>
@@ -32,12 +32,14 @@ export default function Home() {
       </section>
 
       {/* 3. Programs Section */}
-      <section id="programs" className="py-24 bg-secondary text-white">
+      <section id="programs" className="py-24 bg-white text-white">
         <div className="container mx-auto px-4">
-          <div className="mb-16 text-center">
-            <h3 className="text-5xl font-bold mt-2 ">Pilih Program Kamu</h3>
-            <div className="w-24 h-2 bg-primary mx-auto mt-4"></div>
+          <div className="relative flex items-center justify-center mb-16">
+          <div className="w-full h-[2px] bg-dbl-orange"></div>
+          <div className="absolute bg-dbl-orange text-white font-montserrat font-bold px-8 py-2 rounded-full uppercase text-xs tracking-[0.2em]">
+            Our Programs
           </div>
+        </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {PROGRAMS.map((item) => (
