@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav className="fixed w-full z-50">
 
       
-      <div className="bg-dbl-blue/90 backdrop-blur-md border-b-4 border-primary relative">
+      <div className="bg-secondary backdrop-blur-md border-b-4 border-primary relative">
         <div className="container mx-auto px-4 flex items-center justify-center h-16 md:h-20 relative">
           
           {/* Menu Kiri */}
@@ -78,7 +78,7 @@ export default function Navbar() {
 
           {/* Menu Kanan */}
           <div className="hidden md:flex flex-1 justify-start items-center gap-8 pl-20 text-white font-bold text-xs uppercase tracking-wider">
-            <Link href="/gallery" className="font-montserrat text-[12px] hover:text-dbl-orange transition">Gallery</Link>
+            <Link href="/gallery" className="hover:text-dbl-orange transition">Gallery</Link>
             <Link href="#programs" className="font-montserrat text-[12px] hover:text-dbl-orange transition">Our Programs</Link>
             
             <Link href="https://app.wirabhakti.my.id/login" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border-l pl-6 border-white/30 ml-4">

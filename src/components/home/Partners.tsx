@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Partners() {
   return (
-    <section id="partners" className="py-16 bg-gray-50">
+    <section id="partners" className="py-16 bg-secondary text-white">
       <div className="container mx-auto px-4">
         {/* Garis Pembatas dengan Label Partners di Tengah */}
         <div className="relative flex items-center justify-center mb-16">
