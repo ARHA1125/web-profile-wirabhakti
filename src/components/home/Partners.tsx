@@ -1,6 +1,11 @@
 import Image from "next/image";
+import { getSponsorList } from "../../hooks/useSponsor";
 
-export default function Partners() {
+export default async function Partners() {
+  const sponsors = await getSponsorList();
+
+  if (sponsors.length === 0) return null;
+
   return (
     <section id="partners" className="py-16 bg-white text-white">
       <div className="container mx-auto px-4">
@@ -14,27 +19,17 @@ export default function Partners() {
 
         {/* Container Logo Partner */}
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-24">
-          {/* Partner 1 */}
-          <div className="w-32 md:w-44 transition-all duration-300 hover:scale-110">
-            <Image 
-              src="/image/partner1.png" 
-              alt="Partner 1" 
-              width={200} 
-              height={100} 
-              className="object-contain w-full h-auto"
-            />
-          </div>
-
-          {/* Partner 2 */}
-          <div className="w-32 md:w-44 transition-all duration-300 hover:scale-110">
-            <Image 
-              src="/image/partner2.png" 
-              alt="Partner 2" 
-              width={200} 
-              height={100} 
-              className="object-contain w-full h-auto"
-            />
-          </div>
+          {sponsors.map((sponsor) => (
+            <div key={sponsor.id} className="w-32 md:w-44 transition-all duration-300 hover:scale-110">
+              <Image
+                src={sponsor.logoUrl}
+                alt={sponsor.name}
+                width={200}
+                height={100}
+                className="object-contain w-full h-auto"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
