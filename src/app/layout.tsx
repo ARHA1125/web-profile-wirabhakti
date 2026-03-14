@@ -13,6 +13,28 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Wirabhakti Basket Akademi | Where Champions Begin",
   description: "Akademi basket terbaik untuk anak dan remaja.",
+  openGraph: {
+    title: "Wirabhakti Basket Akademi | Where Champions Begin",
+    description: "Akademi basket terbaik untuk anak dan remaja.",
+    url: "https://wirabhakti.my.id",
+    siteName: "Wirabhakti Basket Akademi",
+    images: [
+      {
+        url: "/OG.png",
+        width: 1200,
+        height: 630,
+        alt: "Wirabhakti Basket Akademi",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wirabhakti Basket Akademi | Where Champions Begin",
+    description: "Akademi basket terbaik untuk anak dan remaja.",
+    images: ["/OG.png"],
+  },
 };
 
 export default function RootLayout({
