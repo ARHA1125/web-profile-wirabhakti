@@ -2,12 +2,6 @@ import { Sponsor } from "../types/sponsor";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005";
 
-// Static fallback sponsors (matching the current hardcoded partners)
-const STATIC_SPONSORS: Sponsor[] = [
-  { id: "1", name: "Partner 1", logoUrl: "/image/partner1.png" },
-  { id: "2", name: "Partner 2", logoUrl: "/image/partner2.png" },
-];
-
 /**
  * Prefix relative image paths with API base URL
  */
@@ -46,6 +40,6 @@ export async function getSponsorList(): Promise<Sponsor[]> {
     return sponsors.filter((s) => s.logoUrl);
   } catch (error) {
     console.warn("[getSponsorList] API unavailable, using static fallback:", error);
-    return STATIC_SPONSORS;
+    return [];
   }
 }
