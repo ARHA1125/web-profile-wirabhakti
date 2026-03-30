@@ -23,6 +23,17 @@ export async function generateMetadata({
   return {
     title: `${news.title} | Wirabhakti Basket Akademi`,
     description: news.excerpt,
+    openGraph: {
+      title: news.title,
+      description: news.excerpt,
+      images: [news.image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: news.title,
+      description: news.excerpt,
+      images: [news.image],
+    }
   };
 }
 
