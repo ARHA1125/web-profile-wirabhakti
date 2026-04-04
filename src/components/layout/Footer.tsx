@@ -21,7 +21,7 @@ export default function Footer() {
           <h4 className="font-bold mb-4 uppercase text-primary">Contact</h4>
           <p className="text-white">Jl.Brigjen Slamet Riyadi Lumajang, Tompokersan, Kec. Lumajang, Kabupaten Lumajang, Jawa Timur</p>
           <br />
-          <p className="text-white">WhatsApp: +62 812-3456-7890</p>
+          <p className="text-white">WhatsApp: +62 822-4486-6770</p>
         </div>
       </div>
       <div className="container mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-sm text-white">
