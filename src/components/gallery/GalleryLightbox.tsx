@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import NewsImage from "../news/NewsImage";
 import type { GalleryPhoto } from "../../types/gallery";
 
 // ── Icons ──
@@ -39,13 +39,19 @@ export default function GalleryLightbox({ photos }: { photos: GalleryPhoto[] }) 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
     setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    document.body.style.overflow = "";
   };
+
+  useEffect(() => {
+    document.body.style.overflow = lightboxOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightboxOpen]);
 
   const goNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % photos.length);
@@ -77,11 +83,11 @@ export default function GalleryLightbox({ photos }: { photos: GalleryPhoto[] }) 
             onClick={() => openLightbox(idx)}
             className="group relative aspect-square overflow-hidden rounded-xl shadow-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-dbl-orange"
           >
-            <Image
+            <NewsImage
               src={photo.src}
               alt={photo.alt}
-              fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
+              sizes="(min-width: 768px) 33vw, 50vw"
             />
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-secondary/0 group-hover:bg-secondary/40 transition-colors duration-300 flex items-center justify-center">
@@ -135,12 +141,12 @@ export default function GalleryLightbox({ photos }: { photos: GalleryPhoto[] }) 
 
           {/* Image */}
           <div className="relative w-full h-full max-w-5xl max-h-[80vh] mx-16 md:mx-24">
-            <Image
+            <NewsImage
               src={photos[currentIndex].src}
               alt={photos[currentIndex].alt}
-              fill
               className="object-contain"
               priority
+              sizes="100vw"
             />
           </div>
 
@@ -174,12 +180,12 @@ export default function GalleryLightbox({ photos }: { photos: GalleryPhoto[] }) 
                     : "opacity-50 hover:opacity-80"
                 }`}
               >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  className="object-cover"
-                />
+                 <NewsImage
+                   src={photo.src}
+                   alt={photo.alt}
+                   className="object-cover"
+                   sizes="64px"
+                 />
               </button>
             ))}
           </div>

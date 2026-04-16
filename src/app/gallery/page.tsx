@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getGalleryList } from "../../hooks/useGallery";
 import type { GalleryAlbum } from "../../types/gallery";
+import NewsImage from "../../components/news/NewsImage";
 
 export default async function GalleryPage() {
   const albums: GalleryAlbum[] = await getGalleryList();
@@ -34,11 +34,11 @@ export default async function GalleryPage() {
                 key={album.id}
                 className="group relative overflow-hidden rounded-xl bg-secondary aspect-square shadow-lg block"
               >
-                <Image
+                <NewsImage
                   src={album.cover}
                   alt={album.title}
-                  fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 />
 
                 {/* Category badge */}

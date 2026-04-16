@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGalleryList, getGalleryBySlug, getGallerySlugs } from "../../../hooks/useGallery";
 import GalleryLightbox from "../../../components/gallery/GalleryLightbox";
+import NewsImage from "../../../components/news/NewsImage";
 import type { Metadata } from "next";
 
 // ── Static params for SSG ──
@@ -54,12 +54,12 @@ export default async function GalleryDetailPage({
     <main className="min-h-screen bg-white">
       {/* ── Hero Banner ── */}
       <section className="relative h-[50vh] md:h-[65vh] w-full overflow-hidden">
-        <Image
+        <NewsImage
           src={album.cover}
           alt={album.title}
-          fill
           priority
           className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
@@ -144,11 +144,11 @@ export default async function GalleryDetailPage({
                   key={item.id}
                   className="group relative overflow-hidden rounded-xl bg-secondary aspect-[4/3] shadow-lg block"
                 >
-                  <Image
+                  <NewsImage
                     src={item.cover}
                     alt={item.title}
-                    fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                    sizes="(min-width: 768px) 33vw, 100vw"
                   />
                   {/* Category badge */}
                   <div className="absolute top-4 left-4 z-10">
