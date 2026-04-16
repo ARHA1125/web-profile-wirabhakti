@@ -1,25 +1,7 @@
 import { Sponsor } from "../types/sponsor";
+import { normalizeMediaUrl } from "../utils/media";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005";
-
-/**
- * Normalize image URLs to relative paths so they are served same-origin
- * via the nginx /img proxy, avoiding cross-origin OpaqueResponseBlocking.
- */
-function normalizeImageUrl(url: string | undefined): string {
-  if (!url) return "";
-  if (url.startsWith("/image/")) return url;
-  if (url.startsWith("/img")) return url;
-  if (url.startsWith("http")) {
-    try {
-      const parsed = new URL(url);
-      return parsed.pathname;
-    } catch {
-      return url;
-    }
-  }
-  return url.startsWith("/") ? url : `/${url}`;
-}
 
 /**
  * Transform raw API sponsor → Sponsor with normalized logo URL
@@ -28,7 +10,7 @@ function transformSponsor(raw: Record<string, unknown>): Sponsor {
   return {
     id: raw.id as string,
     name: raw.name as string,
-    logoUrl: normalizeImageUrl(raw.logoUrl as string),
+    logoUrl: normalizeMediaUrl(raw.logoUrl as string),
   };
 }
 
@@ -53,4 +35,3 @@ export async function getSponsorList(): Promise<Sponsor[]> {
     return [];
   }
 }
-

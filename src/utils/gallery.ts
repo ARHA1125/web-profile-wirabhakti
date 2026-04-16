@@ -1,4 +1,5 @@
 import { GalleryPhoto, GalleryAlbum } from "../types/gallery";
+import { normalizeMediaUrl } from "./media";
 
 export function transformGalleryResponse(raw: Record<string, unknown>): GalleryAlbum {
   let parsedPhotos: GalleryPhoto[] = [];
@@ -9,10 +10,10 @@ export function transformGalleryResponse(raw: Record<string, unknown>): GalleryA
     parsedPhotos = [];
   }
 
-  const cover = normalizeImageUrl(raw.cover as string);
+  const cover = normalizeMediaUrl(raw.cover as string);
   const photosWithUrls = parsedPhotos.map((photo) => ({
     ...photo,
-    src: normalizeImageUrl(photo.src),
+    src: normalizeMediaUrl(photo.src),
   }));
 
   return {
@@ -25,19 +26,4 @@ export function transformGalleryResponse(raw: Record<string, unknown>): GalleryA
     description: raw.description as string,
     photos: photosWithUrls,
   };
-}
-
-function normalizeImageUrl(url: string | undefined): string {
-  if (!url) return "";
-  if (url.startsWith("/image/")) return url;
-  if (url.startsWith("/img")) return url;
-  if (url.startsWith("http")) {
-    try {
-      const parsed = new URL(url);
-      return parsed.pathname;
-    } catch {
-      return url;
-    }
-  }
-  return url.startsWith("/") ? url : `/${url}`;
 }
