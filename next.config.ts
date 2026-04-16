@@ -16,8 +16,6 @@ const nextConfig: NextConfig = {
         pathname: "/img/**",
       },
     ],
-    // Allow unoptimized images from external domains as fallback
-    unoptimized: true,
   },
 };
 

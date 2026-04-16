@@ -1,10 +1,5 @@
 import { GalleryPhoto, GalleryAlbum } from "../types/gallery";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005";
-
-/**
- * Transform raw API response (photos as JSON string) → GalleryAlbum (photos as parsed array)
- */
 export function transformGalleryResponse(raw: Record<string, unknown>): GalleryAlbum {
   let parsedPhotos: GalleryPhoto[] = [];
   try {
@@ -14,10 +9,10 @@ export function transformGalleryResponse(raw: Record<string, unknown>): GalleryA
     parsedPhotos = [];
   }
 
-  const cover = prefixImageUrl(raw.cover as string);
+  const cover = normalizeImageUrl(raw.cover as string);
   const photosWithUrls = parsedPhotos.map((photo) => ({
     ...photo,
-    src: prefixImageUrl(photo.src),
+    src: normalizeImageUrl(photo.src),
   }));
 
   return {
@@ -32,11 +27,17 @@ export function transformGalleryResponse(raw: Record<string, unknown>): GalleryA
   };
 }
 
-/**
- * Prefix relative image paths with API base URL
- */
-function prefixImageUrl(url: string | undefined): string {
+function normalizeImageUrl(url: string | undefined): string {
   if (!url) return "";
-  if (url.startsWith("http") || url.startsWith("/image/")) return url;
-  return `${API_URL}${url}`;
+  if (url.startsWith("/image/")) return url;
+  if (url.startsWith("/img")) return url;
+  if (url.startsWith("http")) {
+    try {
+      const parsed = new URL(url);
+      return parsed.pathname;
+    } catch {
+      return url;
+    }
+  }
+  return url.startsWith("/") ? url : `/${url}`;
 }

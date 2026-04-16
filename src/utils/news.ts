@@ -1,7 +1,5 @@
 import { NewsContentBlock, NewsItem } from "../types/news";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005";
-
 /**
  * Transform raw API response (content as JSON string) → NewsItem (content as parsed array)
  */
@@ -14,11 +12,11 @@ export function transformNewsResponse(raw: Record<string, unknown>): NewsItem {
     parsedContent = [];
   }
 
-  // Prefix image URLs with API_URL if they are relative paths
-  const image = prefixImageUrl(raw.image as string);
+  // Normalize image URLs to relative paths (same-origin via nginx proxy)
+  const image = normalizeImageUrl(raw.image as string);
   const contentWithUrls = parsedContent.map((block) => {
     if (block.type === "image" && block.src) {
-      return { ...block, src: prefixImageUrl(block.src) };
+      return { ...block, src: normalizeImageUrl(block.src) };
     }
     return block;
   });
@@ -38,10 +36,20 @@ export function transformNewsResponse(raw: Record<string, unknown>): NewsItem {
 }
 
 /**
- * Prefix relative image paths with API base URL
+ * Normalize image URLs to relative paths so they are served same-origin
+ * via the nginx /img proxy, avoiding cross-origin OpaqueResponseBlocking.
  */
-function prefixImageUrl(url: string | undefined): string {
+function normalizeImageUrl(url: string | undefined): string {
   if (!url) return "";
-  if (url.startsWith("http") || url.startsWith("/image/")) return url; // already absolute or local asset
-  return `${API_URL}${url}`; // e.g. /img/news/xxx.jpg → http://localhost:3005/img/news/xxx.jpg
+  if (url.startsWith("/image/")) return url;
+  if (url.startsWith("/img")) return url;
+  if (url.startsWith("http")) {
+    try {
+      const parsed = new URL(url);
+      return parsed.pathname;
+    } catch {
+      return url;
+    }
+  }
+  return url.startsWith("/") ? url : `/${url}`;
 }
