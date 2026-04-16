@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getNewsList, getNewsBySlug, getNewsSlugs } from "../../../hooks/useNews";
 import NewsDetailClient from "../../../components/news/NewsDetailClient";
+import NewsImage from "../../../components/news/NewsImage";
 import type { Metadata } from "next";
 
 // ── Static params for SSG ──
@@ -57,12 +57,12 @@ export default async function NewsDetailPage({
       <main className="min-h-screen bg-white">
         {/* ── Hero Banner ── */}
         <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
-          <Image
+          <NewsImage
             src={news.image}
             alt={news.title}
-            fill
             priority
             className="object-cover"
+            sizes="100vw"
           />
           {/* Gradient overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -175,11 +175,11 @@ export default async function NewsDetailPage({
                       className="my-12 -mx-6 md:mx-0 group"
                     >
                       <div className="relative h-72 md:h-96 w-full overflow-hidden rounded-none md:rounded-2xl shadow-xl">
-                        <Image
+                        <NewsImage
                           src={block.src!}
                           alt={block.alt || ""}
-                          fill
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(min-width: 768px) 768px, 100vw"
                         />
                       </div>
                       {block.caption && (
@@ -252,11 +252,11 @@ export default async function NewsDetailPage({
                     className="group"
                   >
                     <div className="relative h-56 w-full overflow-hidden rounded-2xl mb-5 shadow-md">
-                      <Image
+                      <NewsImage
                         src={item.image}
                         alt={item.title}
-                        fill
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                       />
                       <div className="absolute top-4 left-4">
                         <span className="bg-secondary text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest">

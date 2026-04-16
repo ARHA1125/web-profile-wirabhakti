@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getNewsList } from "../../hooks/useNews";
 import type { NewsItem } from "../../types/news";
+import NewsImage from "../../components/news/NewsImage";
 
 export default async function NewsPage() {
   const newsList: NewsItem[] = await getNewsList();
@@ -34,11 +34,12 @@ export default async function NewsPage() {
 
         {/* Featured News (Berita Utama) */}
         <Link href={`/news/${featuredNews.slug}`} className="group relative block w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl md:rounded-3xl mb-10 md:mb-16 shadow-2xl">
-          <Image
+          <NewsImage
             src={featuredNews.image}
             alt={featuredNews.title}
-            fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
+            priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-5 md:p-8 lg:p-12">
@@ -57,11 +58,11 @@ export default async function NewsPage() {
           {newsList.map((news) => (
             <Link href={`/news/${news.slug}`} key={news.id} className="group">
               <div className="relative h-48 md:h-64 w-full overflow-hidden rounded-xl md:rounded-2xl mb-4 md:mb-6 shadow-md">
-                <Image
+                <NewsImage
                   src={news.image}
                   alt={news.title}
-                  fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 />
                 <div className="absolute top-4 left-4">
                    <span className="bg-secondary text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest">
