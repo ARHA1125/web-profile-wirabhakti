@@ -1,0 +1,464 @@
+{
+  "academyName": "Wirabhakti Basketball Academy",
+  "location": "Jalan Cokrosujono, Lumajang",
+  "instagram": "https://www.instagram.com/wirabhakti.basketball/",
+  "teams": [
+    {
+      "name": "WIRABHAKTI BASKETBALL ACADEMY",
+      "category": "KU-14 Laki-Laki",
+      "pool": "B-2",
+      "coaches": [
+        {
+          "name": "MUHAMMAD ANGGIK HARTANTO",
+          "role": "PELATIH"
+        },
+        {
+          "name": "MOHAMMAD RIZKI DWI SEPTIANTO",
+          "role": "ASISTEN"
+        }
+      ],
+      "officials": [
+        "MUHAMMAD FATHUR ROHMAN",
+        "MAULANA ZAKARIA",
+        "GERALD ARNOV CARLI"
+      ],
+      "schedule": [
+        {
+          "date": "11/05/2026 18:00 WIB",
+          "status": "L",
+          "score": "41 - 64",
+          "opponent": "GARUDA JAYA JEMBER / GARUDA"
+        },
+        {
+          "date": "09/05/2026 14:00 WIB",
+          "status": "W",
+          "score": "65 - 30",
+          "opponent": "UTOMO BASKETBALL CLUB / UTOMO BASKETBALL CLUB KOTA PROBOLINGGO"
+        }
+      ]
+    },
+    {
+      "name": "WIRABHAKTI BASKETBALL",
+      "category": "KU-18 Laki-Laki",
+      "pool": "H-2",
+      "coaches": [
+        {
+          "name": "MUHAMMAD ANGGIK HARTANTO",
+          "role": "PELATIH"
+        },
+        {
+          "name": "MOHAMMAD RIZKI DWI SEPTIANTO",
+          "role": "ASISTEN"
+        }
+      ],
+      "officials": [
+        "MUHAMMAD FATHUR ROHMAN",
+        "MAULANA ZAKARIA",
+        "GERALD ARNOV CARLI"
+      ],
+      "schedule": [
+        {
+          "date": "14/04/2026 20:40 WIB",
+          "status": "L",
+          "score": "38 - 44",
+          "opponent": "UTOMO BASKETBALL CLUB / UTOMO BASKETBALL CLUB KOTA PROBOLINGGO"
+        },
+        {
+          "date": "12/04/2026 18:00 WIB",
+          "status": "L",
+          "score": "37 - 59",
+          "opponent": "TRI DHARMA PROBOLINGGO / TRI DHARMA BASKETBALL PROBOLINGGO"
+        }
+      ]
+    },
+    {
+      "name": "WIRABHAKTI BASKETBALL",
+      "category": "KU-12 Laki-Laki",
+      "pool": "D-1",
+      "coaches": [
+        {
+          "name": "MOHAMMAD RIZKI DWI SEPTIANTO",
+          "role": "PELATIH"
+        },
+        {
+          "name": "MUHAMMAD ANGGIK HARTANTO",
+          "role": "ASISTEN"
+        }
+      ],
+      "officials": [
+        "MAULANA ZAKARIA",
+        "MUHAMMAD FATHUR ROHMAN",
+        "GERALD ARNOV CARLI"
+      ],
+      "schedule": [
+        {
+          "date": "16/04/2026 14:00 WIB",
+          "status": "L",
+          "score": "20 - 56",
+          "opponent": "GARUDA JEMBER / GARUDA"
+        },
+        {
+          "date": "12/04/2026 14:00 WIB",
+          "status": "L",
+          "score": "35 - 37",
+          "opponent": "TRI DHARMA PROBOLINGGO / TRI DHARMA BASKETBALL PROBOLINGGO"
+        }
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "category": "KU-12 Putra",
+      "tournament": "YEJBL 2026 - ZONA 4",
+      "teamName": "WIRABHAKTI BASKETBALL",
+      "rank": "Peringkat 9"
+    },
+    {
+      "category": "KU-14 Putra",
+      "tournament": "YEJBL 2026 - ZONA 4",
+      "teamName": "WIRABHAKTI BASKETBALL ACADEMY",
+      "rank": "Peringkat 5"
+    },
+    {
+      "category": "KU-18 Putra",
+      "tournament": "YEJBL 2026 - ZONA 4",
+      "teamName": "WIRABHAKTI BASKETBALL",
+      "rank": "Peringkat 9"
+    }
+  ],
+  "coaches": [
+    {
+      "name": "MUHAMMAD FATHUR ROHMAN",
+      "role": "PELATIH",
+      "license": "",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/SytrCR6bL1p0-69bd751866642.jpg"
+    },
+    {
+      "name": "MAULANA ZAKARIA",
+      "role": "PELATIH",
+      "license": "",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/mTRa1eOf7Xni-69bd5fc2e1cb9.jpg"
+    },
+    {
+      "name": "MOHAMMAD RIZKI DWI SEPTIANTO",
+      "role": "ASISTEN PELATIH",
+      "license": "C",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/H6XKmGdDj0bc-69bd5503b980f.jpg"
+    },
+    {
+      "name": "MUHAMMAD ANGGIK HARTANTO",
+      "role": "ASISTEN PELATIH",
+      "license": "C",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/nNqF7QdZaG0C-69bf95246bb01.jpg"
+    }
+  ],
+  "officials": [
+    {
+      "name": "GERALD ARNOV CARLI",
+      "role": "OFFICIAL",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/cGCxEynjS23L-69c36fb5df0e8.jpg"
+    },
+    {
+      "name": "MOHAMMAD RIZKI DWI SEPTIANTO",
+      "role": "OFFICIAL",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/59NrlhaPMwED-69c2a8ce6d1b8.jpg"
+    },
+    {
+      "name": "MUHAMMAD ANGGIK HARTANTO",
+      "role": "OFFICIAL",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/C1sKz40MkSmB-69c2ac86890dd.jpg"
+    },
+    {
+      "name": "MUHAMMAD FATHUR ROHMAN",
+      "role": "OFFICIAL",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/IWwseA5dS7Vm-69c37368b03af.jpg"
+    },
+    {
+      "name": "MAULANA ZAKARIA",
+      "role": "OFFICIAL",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/SdUlKoAPFpQL-69c381ab58c75.jpg"
+    }
+  ],
+  "athletes": [
+    {
+      "name": "ABHIRAMA DHANENDRA SURYADI",
+      "age": "11 th",
+      "height": "140 cm",
+      "weight": "29 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/QEDKGSeLJwAF-69bb67273e469.jpg"
+    },
+    {
+      "name": "ABYAN ARSENIO",
+      "age": "10 th",
+      "height": "137 cm",
+      "weight": "32 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/EVLSnUIkbpFC-69bb724455dc3.jpg"
+    },
+    {
+      "name": "ACHMAD ALDEANSYAH SAPUTRA PRATAMA",
+      "age": "14 th",
+      "height": "160 cm",
+      "weight": "42 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/VsQGUmfOPEDv-69d528f8eb970.jpg"
+    },
+    {
+      "name": "AFWAN FIKRI ALHAMDANI",
+      "age": "16 th",
+      "height": "164 cm",
+      "weight": "63 kg",
+      "position": "SF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/Efy84vaKGpAP-69be33dd168ae.jpg"
+    },
+    {
+      "name": "ALZAM AHMAD TSAQIF",
+      "age": "10 th",
+      "height": "147 cm",
+      "weight": "37 kg",
+      "position": "SG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/CugFY23pwjM0-69bb738bad55e.jpg"
+    },
+    {
+      "name": "AMOUR THEODORE TORRETTO CARLI",
+      "age": "12 th",
+      "height": "173 cm",
+      "weight": "72 kg",
+      "position": "C",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/YZ4lHuDJ6ctI-69bb748078c2a.jpg"
+    },
+    {
+      "name": "ARDIAN ABDUL MALIK LAKSONO",
+      "age": "9 th",
+      "height": "150 cm",
+      "weight": "34 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/esyMt5xr8WV1-69c3d52567f7f.jpg"
+    },
+    {
+      "name": "ASLAN HANIF MUHYIDDIN",
+      "age": "18 th",
+      "height": "165 cm",
+      "weight": "51 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/6yb4vfCeomxK-69bbda266f1fa.jpg"
+    },
+    {
+      "name": "ATHA ZAKI KHAIRULLAH",
+      "age": "18 th",
+      "height": "178 cm",
+      "weight": "75 kg",
+      "position": "PF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/cwSxk2AUVgpG-69bd567a9ed9f.jpg"
+    },
+    {
+      "name": "AZKA TYAGA BILFAQIH",
+      "age": "14 th",
+      "height": "159 cm",
+      "weight": "40 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/ApdwiE97yXN8-69d7b91ecb359.jpg"
+    },
+    {
+      "name": "DARREN BEZALEEL OBAJA",
+      "age": "14 th",
+      "height": "168 cm",
+      "weight": "50 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/ZF39dYtInGRg-69d7a279b70ff.jpg"
+    },
+    {
+      "name": "FAKHRY FITRA NIZAM",
+      "age": "15 th",
+      "height": "180 cm",
+      "weight": "75 kg",
+      "position": "C",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/JcwB21PfHhSU-69bd61d6c9cff.jpg"
+    },
+    {
+      "name": "FARIS DAVA ARDIYANSYAH",
+      "age": "16 th",
+      "height": "168 cm",
+      "weight": "60 kg",
+      "position": "SG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/Yl0QW3TFHxzm-69bd5414487ab.jpg"
+    },
+    {
+      "name": "FITRANO AZHAR TAUFIQULHAKIM",
+      "age": "16 th",
+      "height": "175 cm",
+      "weight": "60 kg",
+      "position": "PF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/jCQ8ulZ75bz1-69bd51de7e6d6.jpg"
+    },
+    {
+      "name": "IAN MEICHAVANO",
+      "age": "16 th",
+      "height": "172 cm",
+      "weight": "56 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/NFbt9GKnmP0Z-69be1ac0343f1.jpg"
+    },
+    {
+      "name": "KEEFE NATHANIEL PRASETIO",
+      "age": "13 th",
+      "height": "153 cm",
+      "weight": "53 kg",
+      "position": "SF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/y0DblvgMV39e-69d09a526418d.jpg"
+    },
+    {
+      "name": "KENARD REFIANTO",
+      "age": "11 th",
+      "height": "153 cm",
+      "weight": "55 kg",
+      "position": "SF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/FT1Jme5jiopw-69bb52465654f.jpg"
+    },
+    {
+      "name": "KEYSHA APRILIAN PRAYOGI",
+      "age": "14 th",
+      "height": "158 cm",
+      "weight": "60 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/Flq2swJ5hkRN-69d24caef0061.jpg"
+    },
+    {
+      "name": "LIONEL CALVIN WIJAYA",
+      "age": "11 th",
+      "height": "120 cm",
+      "weight": "30 kg",
+      "position": "SG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/3CAwj0IOLc7V-69bb7176bcc6c.jpg"
+    },
+    {
+      "name": "MATTHEW OWEN CHRISTIAN",
+      "age": "16 th",
+      "height": "170 cm",
+      "weight": "64 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/ozv6k1N7fFKa-69bd65741fe46.jpg"
+    },
+    {
+      "name": "MAXWELL FILBERT CHRISTIAN",
+      "age": "11 th",
+      "height": "140 cm",
+      "weight": "30 kg",
+      "position": "SG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/Ii5sA0grDBXk-69bb764ee55cc.jpg"
+    },
+    {
+      "name": "MOCHAMAD AZKA JUNIO ERWINSYAH",
+      "age": "12 th",
+      "height": "170 cm",
+      "weight": "65 kg",
+      "position": "PF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/uCqOAmvDtMcS-69bb7322567ba.jpg"
+    },
+    {
+      "name": "MOCHAMMAD AIDAN YISA",
+      "age": "12 th",
+      "height": "150 cm",
+      "weight": "45 kg",
+      "position": "SF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/rbLUx5WEpYyq-69be171eb2bec.jpg"
+    },
+    {
+      "name": "MOHAMMAD LIYANDRA ARDI PRATAMA",
+      "age": "15 th",
+      "height": "169 cm",
+      "weight": "65 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/QFP69lVTzfUb-69bd60c430112.jpg"
+    },
+    {
+      "name": "MUHAMMAD ALFATHIR FABRIZIO",
+      "age": "14 th",
+      "height": "164 cm",
+      "weight": "46 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/05/031xtKUmDPfH-69f57f9f09599.jpg"
+    },
+    {
+      "name": "MUHAMMAD FATKHAN",
+      "age": "18 th",
+      "height": "169 cm",
+      "weight": "55 kg",
+      "position": "SF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/4uLWG3gUEZqh-69bd463b6e030.jpg"
+    },
+    {
+      "name": "MUHAMMAD GOZIMUL ULUM",
+      "age": "13 th",
+      "height": "161 cm",
+      "weight": "49 kg",
+      "position": "PF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/xg0Jj7QqGBiM-69d1d23a86d60.jpg"
+    },
+    {
+      "name": "MUHAMMAD NAUFAL AZMIY",
+      "age": "15 th",
+      "height": "160 cm",
+      "weight": "50 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/KFCIR56a72t4-69beb0ecb67dc.jpg"
+    },
+    {
+      "name": "MUHAMMAD RAKHA SETIAWAN",
+      "age": "14 th",
+      "height": "175 cm",
+      "weight": "62 kg",
+      "position": "PF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/nasdjebWQm9E-69d7a6937fca8.jpg"
+    },
+    {
+      "name": "MUHAMMAD ZHAFRAN RASYAD SUBIANTORO",
+      "age": "11 th",
+      "height": "142 cm",
+      "weight": "33 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/0wQDYW7sz3ex-69bb6e4e9640b.jpg"
+    },
+    {
+      "name": "MUHAMMAD ZIMRAAN SHAQUILLE",
+      "age": "14 th",
+      "height": "163 cm",
+      "weight": "63 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/ydcYDzOMNlKb-69d5278c5ba86.jpg"
+    },
+    {
+      "name": "NAUPAL AHMAD ABQORI",
+      "age": "15 th",
+      "height": "173 cm",
+      "weight": "54 kg",
+      "position": "SF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/9eDUVLB3N0Mj-69be3ced34172.jpg"
+    },
+    {
+      "name": "RAKA FERDIAN PUTRA",
+      "age": "14 th",
+      "height": "165 cm",
+      "weight": "65 kg",
+      "position": "PG",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/04/FeGYvAXP3jtk-69d7acd8335f8.jpg"
+    },
+    {
+      "name": "REYNALD HUGO",
+      "age": "15 th",
+      "height": "180 cm",
+      "weight": "88 kg",
+      "position": "C",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/SfXgqb4TDPyw-69bd5a9dbefd1.jpg"
+    },
+    {
+      "name": "REYNER LIE",
+      "age": "12 th",
+      "height": "140 cm",
+      "weight": "35 kg",
+      "position": "SF",
+      "image": "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/q8jx2m6siP3A-69be0d8f52ab1.jpg"
+    }
+  ]
+}

@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Rancangan Wireframe Dashboard Pelatih — Wirabhakti Basket Akademi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #4b5563;
+      color: #1f2937;
+      padding: 50px 0;
+    }
+
+    /* Standard A4/Desktop Canvas Frame */
+    .wire-canvas {
+      width: 1200px;
+      height: 800px;
+      background-color: #ffffff;
+      border: 2px solid #374151;
+      margin: 0 auto 80px auto;
+      display: flex;
+      position: relative;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    }
+
+    .wire-canvas::after {
+      content: "WIREFRAME MODEL - COACH ROLE";
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #9ca3af;
+      pointer-events: none;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 260px;
+      border-right: 2px dashed #9ca3af;
+      background-color: #ffffff;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .brand-section {
+      margin-bottom: 20px;
+    }
+
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .brand-logo-placeholder {
+      width: 24px;
+      height: 24px;
+      border: 2px dashed #4b5563;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: bold;
+    }
+
+    .brand-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .menu-group-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 15px;
+      margin-bottom: 6px;
+    }
+
+    .menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .menu-item {
+      padding: 8px 12px;
+      border: 1px dashed #e5e7eb;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-item.active {
+      background-color: #f3f4f6;
+      border: 1.5px solid #4b5563;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .menu-icon-box {
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid currentColor;
+      border-radius: 2px;
+    }
+
+    .sidebar-footer {
+      font-size: 0.7rem;
+      color: #9ca3af;
+      border-top: 1px dashed #e5e7eb;
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar-avatar-placeholder {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1.5px dashed #9ca3af;
+      background-color: #f9fafb;
+    }
+
+    /* Main Container layout */
+    .main-viewport {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+    }
+
+    /* Top Navigation bar */
+    .navbar {
+      height: 64px;
+      border-bottom: 2px dashed #9ca3af;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-breadcrumbs {
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* Workspace Content Body */
+    .workspace-body {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: 5px;
+    }
+
+    .page-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .page-subtitle {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    /* Grid system */
+    .wire-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .wire-grid-2-1 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .wire-grid-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    /* Wireframe Card/Component elements */
+    .wire-card {
+      border: 1.5px dashed #4b5563;
+      border-radius: 6px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .wire-card-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #4b5563;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #e5e7eb;
+      padding-bottom: 4px;
+    }
+
+    .wire-card-stat-val {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #111827;
+      margin: 4px 0;
+    }
+
+    .wire-card-footer-text {
+      font-size: 0.65rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* Button styles */
+    .wire-btn {
+      background-color: #4b5563;
+      color: #ffffff;
+      border: none;
+      padding: 8px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .wire-btn-outline {
+      background-color: transparent;
+      border: 1.5px dashed #4b5563;
+      color: #4b5563;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Table Layouts */
+    .wire-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+
+    .wire-table th {
+      background-color: #f3f4f6;
+      border: 1px dashed #9ca3af;
+      padding: 6px 10px;
+      text-align: left;
+      font-weight: 700;
+      color: #374151;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+
+    .wire-table td {
+      border: 1px dashed #9ca3af;
+      padding: 6px 10px;
+      color: #4b5563;
+    }
+
+    .wire-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid #4b5563;
+      background-color: #f3f4f6;
+    }
+
+    /* Image/QR placeholder box containing cross lines */
+    .image-placeholder {
+      border: 1.5px dashed #4b5563;
+      background-color: #f9fafb;
+      position: relative;
+      min-height: 100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .image-placeholder svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .image-placeholder-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #9ca3af;
+      z-index: 5;
+      background: #ffffff;
+      padding: 4px 8px;
+      border: 1px dashed #d1d5db;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Form Fields */
+    .wire-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .wire-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #4b5563;
+      text-transform: uppercase;
+    }
+
+    .wire-input {
+      padding: 6px 10px;
+      border: 1.5px dashed #9ca3af;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: #1f2937;
+      background: #ffffff;
+      width: 100%;
+    }
+
+    /* Attendance Toggle Switch */
+    .absensi-toggle {
+      width: 32px;
+      height: 18px;
+      border-radius: 9px;
+      background-color: #d1d5db;
+      border: 1.5px solid #9ca3af;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .absensi-toggle.active {
+      background-color: #10b981;
+      border-color: #047857;
+    }
+
+    .absensi-toggle::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      transition: left 0.15s;
+    }
+
+    .absensi-toggle.active::before {
+      left: 15px;
+    }
+
+    /* Progress bar */
+    .wire-progress {
+      height: 6px;
+      background-color: #e5e7eb;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .wire-progress-fill {
+      height: 100%;
+      background-color: #4b5563;
+    }
+
+    /* Slider styling for grading stats */
+    .grading-slider {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+
+    .grading-slider-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .grading-slider-track {
+      height: 8px;
+      background-color: #e5e7eb;
+      border-radius: 4px;
+      position: relative;
+      border: 1px dashed #9ca3af;
+    }
+
+    .grading-slider-fill {
+      height: 100%;
+      background-color: #4b5563;
+      border-radius: 4px;
+    }
+
+    .grading-slider-knob {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 2px solid #4b5563;
+      position: absolute;
+      top: -4px;
+      transform: translateX(-50%);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SUBMODULE 1: COACH - OVERVIEW (#coach-dashboard-overview)
+       ========================================================================= -->
+  <div class="wire-canvas" id="coach-dashboard-overview">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Coach Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item active"><div class="menu-icon-box"></div> Dashboard Utama</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Silabus Latihan</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Absensi Kelas</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Penilaian Atlet</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Roster KU</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Weekly Leaderboard</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Coach Hermawan</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Coach &gt; Dashboard Overview</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Selamat Datang, Coach Hermawan</h1>
+          <p class="page-subtitle">Kelola jadwal latihan, absensi kelas, dan statistik nilai FUT Card atlet Anda.</p>
+        </div>
+
+        <div class="wire-grid-3">
+          <div class="wire-card">
+            <div class="wire-card-title">Kelas Diampu</div>
+            <div class="wire-card-stat-val">2 Kelas</div>
+            <div class="wire-card-footer-text">KU-10 A &amp; KU-12 A</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Total Anak Didik</div>
+            <div class="wire-card-stat-val">53 Siswa</div>
+            <div class="wire-card-footer-text">25 (KU-10) + 28 (KU-12)</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Draft Penilaian Pending</div>
+            <div class="wire-card-stat-val" style="color:#f59e0b;">5 Draft</div>
+            <div class="wire-card-footer-text">Memerlukan review dan audit admin</div>
+          </div>
+        </div>
+
+        <div class="wire-grid-2-1">
+          <!-- Recent activity/schedule -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 12px;">
+            <div class="wire-card-title">Jadwal Sesi Latihan Terdekat</div>
+            <table class="wire-table">
+              <thead>
+                <tr>
+                  <th>Kelas</th>
+                  <th>Hari / Jam</th>
+                  <th>Materi Silabus</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>KU-10 A</strong></td>
+                  <td>Sabtu, 08:00</td>
+                  <td>Body Control &amp; Footwork</td>
+                  <td><button class="wire-btn" style="padding:4px 8px; font-size:0.7rem;">Absen Sekarang</button></td>
+                </tr>
+                <tr>
+                  <td><strong>KU-12 A</strong></td>
+                  <td>Sabtu, 10:00</td>
+                  <td>Advanced Dribble &amp; Drive</td>
+                  <td><button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Mulai Sesi</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Quick stat analysis -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
+            <div class="wire-card-title">Rata-rata OVR Kelas</div>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:5px;">
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.7rem; font-weight:600;">
+                  <span>KU-10 A (Rata-rata OVR)</span>
+                  <span>OVR: 78</span>
+                </div>
+                <div class="wire-progress"><div class="wire-progress-fill" style="width: 78%;"></div></div>
+              </div>
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.7rem; font-weight:600;">
+                  <span>KU-12 A (Rata-rata OVR)</span>
+                  <span>OVR: 81</span>
+                </div>
+                <div class="wire-progress"><div class="wire-progress-fill" style="width: 81%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 2: COACH - ATTENDANCE (#coach-attendance)
+       ========================================================================= -->
+  <div class="wire-canvas" id="coach-attendance">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Coach Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Dashboard Utama</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Silabus Latihan</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Absensi Kelas</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Penilaian Atlet</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Roster KU</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Weekly Leaderboard</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Coach Hermawan</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Coach &gt; Absensi Kelas</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Absensi Kelas Latihan</h1>
+          <p class="page-subtitle">Isi kehadiran siswa. Sistem otomatis mengirimkan Notifikasi WA via WAHA ke Orang Tua.</p>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <div style="display:flex; gap:10px; flex:1;">
+            <select class="wire-input" style="max-width:200px;">
+              <option>Pilih Kelas: KU-10 A</option>
+              <option>KU-12 A</option>
+            </select>
+            <input type="text" class="wire-input" placeholder="Cari siswa..." style="max-width:250px;">
+          </div>
+          <strong style="font-size:0.75rem;">Sesi: Sabtu, 23 Jun 2026</strong>
+        </div>
+
+        <div class="wire-grid-2-1" style="grid-template-columns: 2fr 1fr; flex:1;">
+          <!-- Left: Students attendance list -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.75rem; font-weight:700; color:#4b5563;">Kehadiran Atlet</span>
+              <button class="wire-btn-outline" style="padding:3px 6px; font-size:0.65rem;">Hadir Semua</button>
+            </div>
+            
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <!-- Student Row 1 -->
+              <div style="display:flex; justify-content:space-between; align-items:center; border:1px dashed #cbd5e1; padding:8px 12px; border-radius:4px;">
+                <div>
+                  <strong style="font-size:0.8rem; display:block;">Budi Santoso</strong>
+                  <span style="font-size:0.65rem; color:#6b7280;">No. Punggung: 10</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-size:0.65rem; font-weight:700; color:#10b981;">HADIR</span>
+                  <div class="absensi-toggle active"></div>
+                </div>
+              </div>
+
+              <!-- Student Row 2 -->
+              <div style="display:flex; justify-content:space-between; align-items:center; border:1px dashed #cbd5e1; padding:8px 12px; border-radius:4px;">
+                <div>
+                  <strong style="font-size:0.8rem; display:block;">Billy Pratama</strong>
+                  <span style="font-size:0.65rem; color:#6b7280;">No. Punggung: 22</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-size:0.65rem; font-weight:700; color:#10b981;">HADIR</span>
+                  <div class="absensi-toggle active"></div>
+                </div>
+              </div>
+
+              <!-- Student Row 3 -->
+              <div style="display:flex; justify-content:space-between; align-items:center; border:1px dashed #cbd5e1; padding:8px 12px; border-radius:4px;">
+                <div>
+                  <strong style="font-size:0.8rem; display:block;">Diki Wahyudi</strong>
+                  <span style="font-size:0.65rem; color:#6b7280;">No. Punggung: 07</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-size:0.65rem; font-weight:700; color:#6b7280;">ABSEN</span>
+                  <div class="absensi-toggle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Summary & Save -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+            <div class="wire-card-title">Ringkasan Kehadiran</div>
+            <div style="display:flex; flex-direction:column; gap:10px; font-size:0.75rem;">
+              <div style="display:flex; justify-content:space-between;"><span>Hadir:</span><strong>2 Siswa</strong></div>
+              <div style="display:flex; justify-content:space-between;"><span>Absen:</span><strong>1 Siswa</strong></div>
+              <div style="display:flex; justify-content:space-between;"><span>Izin:</span><strong>0 Siswa</strong></div>
+            </div>
+            
+            <div style="background:#f3f4f6; border:1px dashed #9ca3af; padding:10px; border-radius:4px; font-size:0.65rem; color:#4b5563; margin-top:auto;">
+              ℹ️ Mengklik "Simpan &amp; Broadcast" akan mengirimkan pesan WhatsApp ke orang tua siswa yang tidak hadir secara otomatis.
+            </div>
+
+            <button class="wire-btn" style="width:100%;">Kirim &amp; Simpan Absensi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 3: COACH - CURRICULUM (#coach-curriculum)
+       ========================================================================= -->
+  <div class="wire-canvas" id="coach-curriculum">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Coach Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Dashboard Utama</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Silabus Latihan</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Absensi Kelas</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Penilaian Atlet</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Roster KU</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Weekly Leaderboard</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Coach Hermawan</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Coach &gt; Silabus Latihan</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Syllabus &amp; Curriculum tracking</h1>
+          <p class="page-subtitle">Pantau peta penyampaian materi latihan untuk Kelompok Umur (KU) di lapangan.</p>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <select class="wire-input" style="max-width:200px;">
+            <option>Pilih Tingkat: Dasar (KU-10)</option>
+            <option>Menengah (KU-12)</option>
+          </select>
+          <strong style="font-size:0.75rem;">Progres: 85% Selesai</strong>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start; gap: 15px; flex:1;">
+          <div class="wire-card-title">Matriks Silabus Latihan - KU-10</div>
+          
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <!-- Module 1 -->
+            <div style="border:1px dashed #9ca3af; padding:12px; border-radius:6px; display:flex; justify-content:space-between; align-items:center; background:#f9fafb;">
+              <div>
+                <strong style="font-size:0.8rem; display:block;">Modul 1: Body Control &amp; Footwork</strong>
+                <p style="font-size:0.65rem; color:#6b7280; margin-top:2px;">Fokus: Agility drills, defensive stance, footwork pivot.</p>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399;">LUNAS / COMPLETED</span>
+                <input type="checkbox" checked disabled>
+              </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div style="border:1px dashed #9ca3af; padding:12px; border-radius:6px; display:flex; justify-content:space-between; align-items:center; background:#f9fafb;">
+              <div>
+                <strong style="font-size:0.8rem; display:block;">Modul 2: Ball Handling &amp; Stationary Dribble</strong>
+                <p style="font-size:0.65rem; color:#6b7280; margin-top:2px;">Fokus: Dribble kanan-kiri, crossover di tempat, fingertip drill.</p>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399;">LUNAS / COMPLETED</span>
+                <input type="checkbox" checked disabled>
+              </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div style="border:1px dashed #9ca3af; padding:12px; border-radius:6px; display:flex; justify-content:space-between; align-items:center; background:#ffffff;">
+              <div>
+                <strong style="font-size:0.8rem; display:block;">Modul 3: Passing Mechanics</strong>
+                <p style="font-size:0.65rem; color:#6b7280; margin-top:2px;">Fokus: Chest pass, bounce pass, overhead pass dinamis.</p>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span class="wire-badge" style="background:#fffbeb; color:#854d0e; border-color:#fcd34d;">ON GOING</span>
+                <input type="checkbox">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 4: COACH - EVALUATIONS (#coach-evaluations)
+       ========================================================================= -->
+  <div class="wire-canvas" id="coach-evaluations">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Coach Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Dashboard Utama</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Silabus Latihan</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Absensi Kelas</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Penilaian Atlet</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Roster KU</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Weekly Leaderboard</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Coach Hermawan</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Coach &gt; Penilaian Atlet (FUT Card Builder)</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Penilaian Statistik Atlet (FUT Card)</h1>
+          <p class="page-subtitle">Isi penilaian kemampuan fisik &amp; taktis siswa untuk menghasilkan profil FUT Card digital.</p>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <select class="wire-input" style="max-width:250px;">
+            <option>Pilih Siswa: Budi Santoso</option>
+            <option>Billy Pratama</option>
+            <option>Clara Sinta</option>
+          </select>
+          <strong style="font-size:0.75rem;">Kelas: KU-10 A | Posisi: Guard</strong>
+        </div>
+
+        <div class="wire-grid-2-1" style="flex:1;">
+          <!-- Left: Sliders inputs -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
+            <div class="wire-card-title">Evaluasi Kemampuan Fisik &amp; Teknik</div>
+            
+            <div class="grading-slider">
+              <div class="grading-slider-info"><span>Speed (SPD)</span><strong>85</strong></div>
+              <div class="grading-slider-track">
+                <div class="grading-slider-fill" style="width: 85%;"></div>
+                <div class="grading-slider-knob" style="left: 85%;"></div>
+              </div>
+            </div>
+
+            <div class="grading-slider">
+              <div class="grading-slider-info"><span>Dribbling (DRI)</span><strong>88</strong></div>
+              <div class="grading-slider-track">
+                <div class="grading-slider-fill" style="width: 88%;"></div>
+                <div class="grading-slider-knob" style="left: 88%;"></div>
+              </div>
+            </div>
+
+            <div class="grading-slider">
+              <div class="grading-slider-info"><span>Shooting (SHO)</span><strong>80</strong></div>
+              <div class="grading-slider-track">
+                <div class="grading-slider-fill" style="width: 80%;"></div>
+                <div class="grading-slider-knob" style="left: 80%;"></div>
+              </div>
+            </div>
+
+            <div class="grading-slider">
+              <div class="grading-slider-info"><span>Passing (PAS)</span><strong>75</strong></div>
+              <div class="grading-slider-track">
+                <div class="grading-slider-fill" style="width: 75%;"></div>
+                <div class="grading-slider-knob" style="left: 75%;"></div>
+              </div>
+            </div>
+
+            <div style="margin-top:auto; display:flex; justify-content:space-between; align-items:center; border-top:1px dashed #e5e7eb; padding-top:15px;">
+              <div>
+                <span style="font-size:0.65rem; color:#6b7280;">Kalkulasi Nilai Rata-rata OVR:</span>
+                <div style="font-size:1.5rem; font-weight:800; color:#111827;">81 OVR</div>
+              </div>
+              <button class="wire-btn">Simpan Penilaian (Draft)</button>
+            </div>
+          </div>
+
+          <!-- Right: Coach Feedback comment -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+            <div class="wire-card-title">Catatan &amp; Evaluasi Tertulis</div>
+            
+            <div class="wire-input-group" style="flex:1;">
+              <label class="wire-label">Feedback Pelatih</label>
+              <textarea class="wire-input" style="height: 100%; resize: none; font-size:0.75rem;" placeholder="Tulis catatan perkembangan atlet disini...">Budi menunjukkan perkembangan dribbling yang sangat pesat minggu ini. Kemampuan ball handling tangan kirinya meningkat tajam saat latihan drill taktis. Perlu diperhatikan konsistensi posisi badan saat bertahan (defensive stance).</textarea>
+            </div>
+            
+            <div style="background:#fffbeb; border:1px dashed #f59e0b; padding:8px; border-radius:4px; font-size:0.6rem; color:#854d0e;">
+              ⚠️ Penilaian yang disimpan akan berstatus "Draft" dan tidak akan tampil di dashboard siswa/orang tua sebelum diaudit dan disetujui oleh admin utama.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 5: COACH - ROSTER (#coach-roster)
+       ========================================================================= -->
+  <div class="wire-canvas" id="coach-roster">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Coach Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Dashboard Utama</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Silabus Latihan</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Absensi Kelas</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Penilaian Atlet</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Roster KU</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Weekly Leaderboard</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Coach Hermawan</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Coach &gt; Roster KU</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Roster Kelas &amp; Kontak Atlet</h1>
+          <p class="page-subtitle">Daftar kontak siswa dan orang tua murid yang terdaftar dalam kelas yang Anda ampu.</p>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <div style="display:flex; gap:10px; flex:1;">
+            <select class="wire-input" style="max-width:200px;">
+              <option>Filter Roster: KU-10 A</option>
+              <option>KU-12 A</option>
+            </select>
+            <input type="text" class="wire-input" placeholder="Cari nama siswa..." style="max-width:250px;">
+          </div>
+          <button class="wire-btn-outline">Download Roster PDF</button>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start; flex:1;">
+          <table class="wire-table">
+            <thead>
+              <tr>
+                <th>Nama Atlet</th>
+                <th>Orang Tua (Wali)</th>
+                <th>Kontak WhatsApp</th>
+                <th>Tgl Tergabung</th>
+                <th>FUT OVR</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Budi Santoso</strong></td>
+                <td>Bapak Santoso</td>
+                <td><code>08123456789</code></td>
+                <td>12 Jan 2025</td>
+                <td><span class="wire-badge">81</span></td>
+                <td><button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Hubungi Parent</button></td>
+              </tr>
+              <tr>
+                <td><strong>Billy Pratama</strong></td>
+                <td>Ibu Pratama</td>
+                <td><code>08122334455</code></td>
+                <td>03 Mar 2025</td>
+                <td><span class="wire-badge">80</span></td>
+                <td><button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Hubungi Parent</button></td>
+              </tr>
+              <tr>
+                <td><strong>Clara Sinta</strong></td>
+                <td>Bapak Sinta</td>
+                <td><code>08129876543</code></td>
+                <td>20 Feb 2025</td>
+                <td><span class="wire-badge">80</span></td>
+                <td><button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Hubungi Parent</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 6: COACH - LEADERBOARD (#coach-weekly-leaderboard)
+       ========================================================================= -->
+  <div class="wire-canvas" id="coach-weekly-leaderboard">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Coach Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Dashboard Utama</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Silabus Latihan</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Absensi Kelas</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Penilaian Atlet</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Roster KU</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Weekly Leaderboard</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Coach Hermawan</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Coach &gt; Weekly Leaderboard</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Weekly Leaderboard &amp; XP Tracking</h1>
+          <p class="page-subtitle">Pantau keaktifan siswa berdasarkan pencapaian XP latihan mingguan mereka.</p>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <select class="wire-input" style="max-width:200px;">
+            <option>Pilih Kelas: KU-10 A</option>
+            <option>KU-12 A</option>
+          </select>
+          <strong style="font-size:0.75rem;">Periode: Minggu ini</strong>
+        </div>
+
+        <div class="wire-grid-2-1" style="grid-template-columns: 2fr 1fr; flex:1;">
+          <!-- Leaderboard Table -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
+            <div class="wire-card-title">Peringkat XP Siswa Teratas</div>
+            <table class="wire-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Nama Siswa</th>
+                  <th>Total XP Minggu Ini</th>
+                  <th>Level</th>
+                  <th>Quest Selesai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1 🥇</strong></td>
+                  <td>Billy Pratama</td>
+                  <td><strong>420 XP</strong></td>
+                  <td>Lvl 28</td>
+                  <td>3 Quests</td>
+                </tr>
+                <tr>
+                  <td><strong>2 🥈</strong></td>
+                  <td>Diki Wahyudi</td>
+                  <td><strong>390 XP</strong></td>
+                  <td>Lvl 22</td>
+                  <td>2 Quests</td>
+                </tr>
+                <tr>
+                  <td><strong>3 🥉</strong></td>
+                  <td>Budi Santoso</td>
+                  <td><strong>380 XP</strong></td>
+                  <td>Lvl 25</td>
+                  <td>2 Quests</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Gamification reward quick assign -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+            <div class="wire-card-title">Beri Bonus XP / Quest Reward</div>
+            <div class="wire-input-group">
+              <label class="wire-label">Pilih Siswa</label>
+              <select class="wire-input">
+                <option>Budi Santoso</option>
+                <option>Billy Pratama</option>
+              </select>
+            </div>
+            
+            <div class="wire-input-group">
+              <label class="wire-label">Kategori Reward</label>
+              <select class="wire-input">
+                <option>First to Drill (+50 XP)</option>
+                <option>Defensive Master (+100 XP)</option>
+                <option>Custom XP...</option>
+              </select>
+            </div>
+
+            <button class="wire-btn" style="width:100%; margin-top:auto;">Beri XP Reward</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

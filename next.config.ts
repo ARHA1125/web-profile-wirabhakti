@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         hostname: "api.wirabhakti.my.id",
         pathname: "/img/**",
       },
+      {
+        protocol: "https",
+        hostname: "basketyuk-id.nos.wjv-1.neo.id",
+        pathname: "/**",
+      },
     ],
     // Images are served same-origin via nginx /img proxy, but the Next.js
     // standalone server inside Docker can't reach that proxy internally,

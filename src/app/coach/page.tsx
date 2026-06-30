@@ -3,26 +3,50 @@ import Image from "next/image";
 const COACHES = [
   {
     id: 1,
-    name: "Pep Guardiola",
+    name: "Muhammad Fathur Rohman",
     role: "HEAD COACH",
-    image: "/image/coach1.png",
+    image: "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/SytrCR6bL1p0-69bd751866642.jpg",
     experience: [
-      "Pelatih Kepala Tim Manchester City",
-      "Sertifikasi Pelatih Lisensi A Nasional",
-      "Mantan Pemain Profesional NBL Indonesia",
-      "Spesialis Pengembangan Karakter Atlet Muda"
+      "Pelatih Kepala Wirabhakti Basketball Academy",
+      "Sertifikasi Pelatih Lisensi Nasional",
+      "Spesialisasi dalam Taktik Tim dan Strategi Permainan",
+      "Pengembangan Talenta Muda Basket Regional"
     ]
   },
   {
     id: 2,
-    name: "Xabi Alonso",
+    name: "Maulana Zakaria",
     role: "TECHNICAL COACH",
-    image: "/image/coach2.png",
+    image: "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/mTRa1eOf7Xni-69bd5fc2e1cb9.jpg",
     experience: [
-      "Spesialis Fundamental & Shooting",
-      "Berpengalaman melatih di berbagai klub lokal",
-      "Fokus pada Technical Skill Development",
-      "Lulusan Pendidikan Kepelatihan Olahraga"
+      "Pelatih Fundamental Wirabhakti Basketball Academy",
+      "Spesialis Fundamental & Shooting Development",
+      "Fokus pada Technical Skill Development Individu",
+      "Berpengalaman Melatih Kelompok Umur (KU-12, KU-14, KU-18)"
+    ]
+  },
+  {
+    id: 3,
+    name: "Mohammad Rizki Dwi Septianto",
+    role: "ASSISTANT COACH",
+    image: "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/H6XKmGdDj0bc-69bd5503b980f.jpg",
+    experience: [
+      "Asisten Pelatih Wirabhakti Basketball Academy",
+      "Sertifikasi Lisensi C Perbasi (Berlaku hingga 2026)",
+      "Spesialisasi Basic Motoric Skills & Fisik Pemain",
+      "Fokus Pembinaan Kelompok Umur KU-12 Laki-Laki"
+    ]
+  },
+  {
+    id: 4,
+    name: "Muhammad Anggik Hartanto",
+    role: "ASSISTANT COACH",
+    image: "https://basketyuk-id.nos.wjv-1.neo.id/uploads/2026/03/nNqF7QdZaG0C-69bf95246bb01.jpg",
+    experience: [
+      "Asisten Pelatih Wirabhakti Basketball Academy",
+      "Sertifikasi Lisensi C Perbasi (Berlaku hingga 2028)",
+      "Spesialisasi Sistem Pertahanan (Defense) & Game Analysis",
+      "Fokus Pembinaan Kelompok Umur KU-14 & KU-18 Laki-Laki"
     ]
   }
 ];

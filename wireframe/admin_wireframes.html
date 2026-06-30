@@ -1,0 +1,2495 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Rancangan Wireframe Dashboard Admin Rill — Wirabhakti Basket Akademi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #4b5563; /* Grey canvas backdrop matching existing wireframes */
+      color: #1f2937;
+      padding: 50px 0;
+    }
+
+    /* Standard A4/Desktop Canvas Frame */
+    .wire-canvas {
+      width: 1200px;
+      height: 800px;
+      background-color: #ffffff;
+      border: 2px solid #374151;
+      margin: 0 auto 80px auto;
+      display: flex;
+      position: relative;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Grid layout styling helper */
+    .wire-canvas::after {
+      content: "WIREFRAME MODEL - ACCURATE LAYOUT";
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #9ca3af;
+      pointer-events: none;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 260px;
+      border-right: 2px dashed #9ca3af;
+      background-color: #ffffff;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .brand-section {
+      margin-bottom: 20px;
+    }
+
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .brand-logo-placeholder {
+      width: 24px;
+      height: 24px;
+      border: 2px dashed #4b5563;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: bold;
+    }
+
+    .brand-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .sidebar-search {
+      margin-bottom: 20px;
+    }
+
+    .sidebar-search-input {
+      width: 100%;
+      padding: 6px 10px;
+      border: 1px dashed #9ca3af;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+
+    .menu-group-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 15px;
+      margin-bottom: 6px;
+    }
+
+    .menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .menu-item {
+      padding: 8px 12px;
+      border: 1px dashed #e5e7eb;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-item.active-parent {
+      font-weight: bold;
+      color: #111827;
+    }
+
+    .menu-sublist {
+      list-style: none;
+      padding-left: 15px;
+      border-left: 1.5px dashed #d1d5db;
+      margin-left: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .menu-subitem {
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      color: #4b5563;
+      border-radius: 3px;
+      border: 1px dashed transparent;
+    }
+
+    .menu-subitem.active {
+      background-color: #f3f4f6;
+      border: 1.5px solid #4b5563;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .menu-icon-box {
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid currentColor;
+      border-radius: 2px;
+    }
+
+    .sidebar-footer {
+      font-size: 0.7rem;
+      color: #9ca3af;
+      border-top: 1px dashed #e5e7eb;
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar-avatar-placeholder {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1.5px dashed #9ca3af;
+      background-color: #f9fafb;
+    }
+
+    /* Main Container layout */
+    .main-viewport {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+    }
+
+    /* Top Navigation bar */
+    .navbar {
+      height: 64px;
+      border-bottom: 2px dashed #9ca3af;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-breadcrumbs {
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* Workspace Content Body */
+    .workspace-body {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: 5px;
+    }
+
+    .page-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .page-subtitle {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    /* Tab bar (TabList) */
+    .tab-list {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1.5px dashed #d1d5db;
+      padding-bottom: 1px;
+      margin-bottom: 5px;
+    }
+
+    .tab-button {
+      padding: 8px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      border: 1.5px dashed #d1d5db;
+      border-bottom: none;
+      background: #ffffff;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-button.active {
+      border: 2px solid #4b5563;
+      border-bottom: 2px solid #ffffff;
+      color: #111827;
+      font-weight: 700;
+      margin-bottom: -2px;
+      background-color: #ffffff;
+    }
+
+    /* Grid system */
+    .wire-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .wire-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .wire-grid-2-1 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .wire-grid-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    /* Wireframe Card/Component elements */
+    .wire-card {
+      border: 1.5px dashed #4b5563;
+      border-radius: 6px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .wire-card-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #4b5563;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #e5e7eb;
+      padding-bottom: 4px;
+    }
+
+    .wire-card-stat-val {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #111827;
+      margin: 4px 0;
+    }
+
+    .wire-card-footer-text {
+      font-size: 0.65rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* Button styles */
+    .wire-btn {
+      background-color: #4b5563;
+      color: #ffffff;
+      border: none;
+      padding: 8px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .wire-btn-outline {
+      background-color: transparent;
+      border: 1.5px dashed #4b5563;
+      color: #4b5563;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Table Layouts */
+    .wire-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+
+    .wire-table th {
+      background-color: #f3f4f6;
+      border: 1px dashed #9ca3af;
+      padding: 6px 10px;
+      text-align: left;
+      font-weight: 700;
+      color: #374151;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+
+    .wire-table td {
+      border: 1px dashed #9ca3af;
+      padding: 6px 10px;
+      color: #4b5563;
+    }
+
+    .wire-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid #4b5563;
+      background-color: #f3f4f6;
+    }
+
+    /* Image/QR placeholder box containing cross lines */
+    .image-placeholder {
+      border: 1.5px dashed #4b5563;
+      background-color: #f9fafb;
+      position: relative;
+      min-height: 100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .image-placeholder svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .image-placeholder-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #9ca3af;
+      z-index: 5;
+      background: #ffffff;
+      padding: 4px 8px;
+      border: 1px dashed #d1d5db;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Form Fields */
+    .wire-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .wire-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #4b5563;
+      text-transform: uppercase;
+    }
+
+    .wire-input {
+      padding: 6px 10px;
+      border: 1.5px dashed #9ca3af;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: #1f2937;
+      background: #ffffff;
+      width: 100%;
+    }
+
+    /* Toggle switches */
+    .wire-toggle {
+      width: 32px;
+      height: 18px;
+      border-radius: 9px;
+      background-color: #d1d5db;
+      border: 1.5px solid #9ca3af;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .wire-toggle.active {
+      background-color: #4b5563;
+      border-color: #374151;
+    }
+
+    .wire-toggle::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      transition: left 0.15s;
+    }
+
+    .wire-toggle.active::before {
+      left: 15px;
+    }
+
+    /* Progress bar */
+    .wire-progress {
+      height: 6px;
+      background-color: #e5e7eb;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .wire-progress-fill {
+      height: 100%;
+      background-color: #4b5563;
+    }
+
+    /* Curriculum Board Grid */
+    .curriculum-board {
+      display: grid;
+      grid-template-columns: 100px repeat(3, 1fr);
+      gap: 8px;
+      flex: 1;
+    }
+
+    .curriculum-col-title {
+      font-weight: 700;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 2px dashed #4b5563;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
+      color: #4b5563;
+    }
+
+    .curriculum-row-header {
+      font-weight: 700;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-right: 1.5px dashed #9ca3af;
+      padding-right: 8px;
+      color: #111827;
+    }
+
+    .curriculum-item-box {
+      border: 1.5px dashed #9ca3af;
+      border-radius: 4px;
+      background-color: #f9fafb;
+      padding: 8px;
+      min-height: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.65rem;
+    }
+
+    /* WhatsApp Simulator specific for automations preview */
+    .wa-preview-body {
+      background-color: #efeae2;
+      border: 1px dashed #9ca3af;
+      border-radius: 8px;
+      padding: 15px;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .wa-bubble {
+      background-color: #e7ffdb;
+      border: 1px solid #c7ebb3;
+      border-radius: 6px;
+      padding: 8px 10px;
+      max-width: 85%;
+      align-self: flex-end;
+      font-size: 0.7rem;
+      line-height: 1.3;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SUBMODULE 1: DATA - MANAGE DATA USER (#admin-members)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-members">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem active">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Data &gt; Manage Data User</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Member Management</h1>
+          <p class="page-subtitle">Manage all students, parents, and coaches in the academy.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button active">Students</button>
+          <button class="tab-button">Parents</button>
+          <button class="tab-button">Coaches</button>
+        </div>
+
+        <div class="wire-grid-3">
+          <div class="wire-card">
+            <div class="wire-card-title">Total Siswa Aktif</div>
+            <div class="wire-card-stat-val">342</div>
+            <div class="wire-card-footer-text">Terbagi dalam KU-10, KU-12, &amp; KU-15</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Siswa Aktif</div>
+            <div class="wire-card-stat-val">330</div>
+            <div class="wire-card-footer-text">Telah terplot ke kelas latihan</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Pending Verifikasi</div>
+            <div class="wire-card-stat-val" style="color: #ef4444;">12</div>
+            <div class="wire-card-footer-text">Butuh persetujuan admin</div>
+          </div>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap: 10px;">
+            <div style="display:flex; gap:10px; flex:1;">
+              <input type="text" class="wire-input" placeholder="Cari siswa berdasarkan nama..." style="max-width:300px;">
+              <select class="wire-input" style="max-width:150px;">
+                <option>Semua KU</option>
+                <option>KU-10</option>
+                <option>KU-12</option>
+                <option>KU-15</option>
+              </select>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="wire-btn-outline">Import Excel</button>
+              <button class="wire-btn">+ Tambah Siswa</button>
+            </div>
+          </div>
+
+          <table class="wire-table">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>No. Telepon</th>
+                <th>Kelompok Umur</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Budi Santoso</strong></td>
+                <td>budi@mail.com</td>
+                <td>08123456789</td>
+                <td>KU-10</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46;">ACTIVE</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Edit</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Plot</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Clara Sinta</strong></td>
+                <td>clara@mail.com</td>
+                <td>08129876543</td>
+                <td>KU-12</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46;">ACTIVE</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Edit</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Plot</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Diki Wahyudi</strong></td>
+                <td>diki@mail.com</td>
+                <td>08567891234</td>
+                <td>KU-10</td>
+                <td><span class="wire-badge" style="background:#fee2e2; color:#991b1b; border-color:#fca5a5;">PENDING</span></td>
+                <td>
+                  <button class="wire-btn" style="padding:2px 6px; font-size:0.65rem;">Setujui</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Tolak</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 2: DATA - USER CREDENTIALS (#admin-users)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-users">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem active">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Data &gt; User Credentials</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">User Credentials Management</h1>
+          <p class="page-subtitle">Manage system user authentication login settings and password resets.</p>
+        </div>
+
+        <div class="wire-grid-4">
+          <div style="border:1px dashed #9ca3af; padding:10px; border-radius:4px; text-align:center; background:#fff;">
+            <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Total Akun</div>
+            <div style="font-size:1.25rem; font-weight:800; color:#111827;">366</div>
+          </div>
+          <div style="border:1px dashed #9ca3af; padding:10px; border-radius:4px; text-align:center; background:#fff;">
+            <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Pelatih</div>
+            <div style="font-size:1.25rem; font-weight:800; color:#111827;">12</div>
+          </div>
+          <div style="border:1px dashed #9ca3af; padding:10px; border-radius:4px; text-align:center; background:#fff;">
+            <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Siswa</div>
+            <div style="font-size:1.25rem; font-weight:800; color:#111827;">342</div>
+          </div>
+          <div style="border:1px dashed #9ca3af; padding:10px; border-radius:4px; text-align:center; background:#fff;">
+            <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Orang Tua</div>
+            <div style="font-size:1.25rem; font-weight:800; color:#111827;">9</div>
+          </div>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; gap:10px; flex:1;">
+              <input type="text" class="wire-input" placeholder="Cari username atau email..." style="max-width:300px;">
+              <select class="wire-input" style="max-width:150px;">
+                <option>Semua Peran</option>
+                <option>Admin</option>
+                <option>Coach</option>
+                <option>Student</option>
+                <option>Parent</option>
+              </select>
+            </div>
+            <button class="wire-btn">+ Tambah Kredensial</button>
+          </div>
+
+          <table class="wire-table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Peran (Role)</th>
+                <th>Login Terakhir</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>admin_utama</code></td>
+                <td>admin@wirabhakti.com</td>
+                <td><span class="wire-badge">ADMIN</span></td>
+                <td>Hari Ini, 09:30</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46;">ACTIVE</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Reset Pass</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td><code>coach_hermawan</code></td>
+                <td>hermawan@mail.com</td>
+                <td><span class="wire-badge">COACH</span></td>
+                <td>Kemarin, 17:15</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46;">ACTIVE</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Reset Pass</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td><code>budi_santoso</code></td>
+                <td>budi@mail.com</td>
+                <td><span class="wire-badge">STUDENT</span></td>
+                <td>3 Hari Lalu</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46;">ACTIVE</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Reset Pass</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 3: ADMIN - FINANCIAL HUB: OVERVIEW (#admin-financial-overview)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-financial-overview">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem active">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Financial Hub &gt; Overview</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Financial Hub</h1>
+          <p class="page-subtitle">Manage invoices, payroll, and automations in one place.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button active">Overview</button>
+          <button class="tab-button">Billing &amp; Invoices</button>
+          <button class="tab-button">Automations</button>
+        </div>
+
+        <div class="wire-grid-4">
+          <div class="wire-card">
+            <div class="wire-card-title">Total Pendapatan</div>
+            <div class="wire-card-stat-val">Rp 51.3 M</div>
+            <div class="wire-card-footer-text">78% Terbayar dari total invoice</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Outstanding Invoice</div>
+            <div class="wire-card-stat-val" style="color:#ef4444;">Rp 14.5 M</div>
+            <div class="wire-card-footer-text">82 Tagihan masih pending</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Pending Midtrans</div>
+            <div class="wire-card-stat-val">5</div>
+            <div class="wire-card-footer-text">Transaksi dalam proses</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">WAHA Engine</div>
+            <div class="wire-card-stat-val" style="color:#10b981;">CONNECTED</div>
+            <div class="wire-card-footer-text">Bot siap kirim notifikasi</div>
+          </div>
+        </div>
+
+        <div class="wire-grid-2-1">
+          <!-- Monthly Revenue Trend Chart -->
+          <div class="wire-card">
+            <div class="wire-card-title">Grafik Pendapatan SPP Bulanan (Januari - Juni)</div>
+            <div class="image-placeholder" style="flex: 1; min-height: 180px;">
+              <svg>
+                <!-- Horizontal guidelines -->
+                <line x1="10%" y1="20%" x2="90%" y2="20%" stroke="#e5e7eb" stroke-dasharray="2 2" />
+                <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="#e5e7eb" stroke-dasharray="2 2" />
+                <line x1="10%" y1="80%" x2="90%" y2="80%" stroke="#e5e7eb" stroke-dasharray="2 2" />
+                <!-- Trend line path -->
+                <path d="M 120 140 Q 200 120 280 150 T 440 90 T 600 70" stroke="#4b5563" stroke-width="2.5" fill="none" />
+                <circle cx="120" cy="140" r="4" fill="#1f2937" />
+                <circle cx="280" cy="150" r="4" fill="#1f2937" />
+                <circle cx="440" cy="90" r="4" fill="#1f2937" />
+                <circle cx="600" cy="70" r="4" fill="#1f2937" />
+              </svg>
+              <div style="position: absolute; bottom: 8px; left: 10%; right: 10%; display: flex; justify-content: space-between; font-size: 0.65rem; color:#9ca3af;">
+                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mei</span><span>Jun</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collection rate donut -->
+          <div class="wire-card">
+            <div class="wire-card-title">Persentase Pelunasan</div>
+            <div class="image-placeholder" style="flex: 1; min-height: 180px; flex-direction:column; gap:8px;">
+              <svg width="100" height="100" viewBox="0 0 36 36" style="transform: rotate(-90deg);">
+                <circle cx="18" cy="18" r="15.91" fill="none" stroke="#e5e7eb" stroke-width="3" />
+                <circle cx="18" cy="18" r="15.91" fill="none" stroke="#4b5563" stroke-width="3" stroke-dasharray="78 22" />
+              </svg>
+              <div style="font-size:1.25rem; font-weight:800; color:#1f2937; margin-top:5px;">78% Lunas</div>
+              <div style="font-size:0.6rem; color:#9ca3af;">22% Outstanding / Belum Bayar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 4: ADMIN - FINANCIAL HUB: BILLING (#admin-financial-billing)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-financial-billing">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem active">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Financial Hub &gt; Billing &amp; Invoices</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Financial Hub</h1>
+          <p class="page-subtitle">Manage invoices, payroll, and automations in one place.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button">Overview</button>
+          <button class="tab-button active">Billing &amp; Invoices</button>
+          <button class="tab-button">Automations</button>
+        </div>
+
+        <div class="wire-grid-3">
+          <div style="border:1px dashed #9ca3af; padding:10px; border-radius:4px; text-align:center; background:#fff;">
+            <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Lunas (Paid)</div>
+            <div style="font-size:1.25rem; font-weight:800; color:#10b981;">320</div>
+          </div>
+          <div style="border:1px dashed #9ca3af; padding:10px; border-radius:4px; text-align:center; background:#fff;">
+            <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Menunggu Pembayaran</div>
+            <div style="font-size:1.25rem; font-weight:800; color:#f59e0b;">82</div>
+          </div>
+          <div style="border:1px dashed #9ca3af; padding:10px; border-radius:4px; text-align:center; background:#fff;">
+            <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Terlambat (Overdue)</div>
+            <div style="font-size:1.25rem; font-weight:800; color:#ef4444;">10</div>
+          </div>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; gap:10px; flex:1;">
+              <input type="text" class="wire-input" placeholder="Cari invoice atau nama siswa..." style="max-width:300px;">
+              <select class="wire-input" style="max-width:150px;">
+                <option>Semua Status</option>
+                <option>Paid</option>
+                <option>Unpaid</option>
+                <option>Overdue</option>
+              </select>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="wire-btn-outline">+ Tambah Manual</button>
+              <button class="wire-btn">⚡ Buat Tagihan Masal</button>
+            </div>
+          </div>
+
+          <table class="wire-table">
+            <thead>
+              <tr>
+                <th>Invoice ID</th>
+                <th>Siswa</th>
+                <th>Bulan</th>
+                <th>Nominal</th>
+                <th>Jatuh Tempo</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>INV-2026-001</code></td>
+                <td><strong>Budi Santoso</strong></td>
+                <td>Juni 2026</td>
+                <td>Rp 350.000</td>
+                <td>10 Jun 2026</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399;">PAID</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Kirim WA</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Detail</button>
+                </td>
+              </tr>
+              <tr>
+                <td><code>INV-2026-002</code></td>
+                <td><strong>Billy Pratama</strong></td>
+                <td>Juni 2026</td>
+                <td>Rp 350.000</td>
+                <td>10 Jun 2026</td>
+                <td><span class="wire-badge" style="background:#fffbeb; color:#854d0e; border-color:#fcd34d;">UNPAID</span></td>
+                <td>
+                  <button class="wire-btn" style="padding:2px 6px; font-size:0.65rem;">Kirim WA</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Mark Paid</button>
+                </td>
+              </tr>
+              <tr>
+                <td><code>INV-2026-003</code></td>
+                <td><strong>Clara Sinta</strong></td>
+                <td>Juni 2026</td>
+                <td>Rp 350.000</td>
+                <td>10 Jun 2026</td>
+                <td><span class="wire-badge" style="background:#fee2e2; color:#991b1b; border-color:#fca5a5;">OVERDUE</span></td>
+                <td>
+                  <button class="wire-btn" style="padding:2px 6px; font-size:0.65rem;">Kirim WA</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Tolak</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 5: ADMIN - FINANCIAL HUB: AUTOMATIONS (#admin-financial-automation)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-financial-automation">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem active">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <!-- Main Viewport -->
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Financial Hub &gt; Automations</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Financial Hub</h1>
+          <p class="page-subtitle">Manage invoices, payroll, and automations in one place.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button">Overview</button>
+          <button class="tab-button">Billing &amp; Invoices</button>
+          <button class="tab-button active">Automations</button>
+        </div>
+
+        <!-- 1. Bot status & new auto-reply rule -->
+        <div class="wire-grid-2-1" style="grid-template-columns: 1fr 2fr;">
+          <!-- WhatsApp Bot Card -->
+          <div class="wire-card">
+            <div class="wire-card-title">WhatsApp Bot</div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <strong>Session Active</strong>
+                <p style="font-size:0.65rem; color:#6b7280; margin-top:2px;">Status: WORKING</p>
+              </div>
+              <button class="wire-btn-outline" style="padding:4px 6px;">Check</button>
+            </div>
+            <div class="image-placeholder" style="height: 60px; margin-top:10px;">
+              <span style="font-size:0.65rem; font-weight:bold; color:#10b981;">● READY TO REPLY</span>
+            </div>
+          </div>
+
+          <!-- New Auto-Reply Rule Card -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
+            <div class="wire-card-title">New Auto-Reply Rule</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+              <div class="wire-input-group">
+                <label class="wire-label">Keyword Trigger</label>
+                <input type="text" class="wire-input" placeholder="e.g. /invoice, /schedule">
+              </div>
+              <div class="wire-input-group">
+                <label class="wire-label">Bot Response</label>
+                <input type="text" class="wire-input" placeholder="Message to send back...">
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <button class="wire-btn">+ Add Automation Rule</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Active Rules list -->
+        <div class="wire-card" style="justify-content: flex-start;">
+          <div class="wire-card-title">Active Auto-Reply Rules</div>
+          <table class="wire-table">
+            <thead>
+              <tr>
+                <th>Trigger Keyword</th>
+                <th>Bot Response</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>/invoice</code></td>
+                <td>Mohon tunggu sebentar, sistem sedang memuat data tagihan Anda...</td>
+                <td><button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 3. Send Queue Section (Rill Detail) -->
+        <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <strong style="font-size: 0.85rem; color:#111827;">Send Queue Monitor</strong>
+              <p style="font-size:0.7rem; color:#6b7280; margin-top:2px;">Monitor all delivery queues for invoices, reminders, and broadcasts.</p>
+            </div>
+            <button class="wire-btn-outline">Refresh Queue</button>
+          </div>
+
+          <!-- Queue counters summary grid -->
+          <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
+            <div style="border: 1px dashed #9ca3af; padding:8px; border-radius:4px; text-align:center;">
+              <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Queued</div>
+              <div style="font-size:1.25rem; font-weight:800; color:#111827;">3</div>
+            </div>
+            <div style="border: 1px dashed #9ca3af; padding:8px; border-radius:4px; text-align:center;">
+              <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Sent</div>
+              <div style="font-size:1.25rem; font-weight:800; color:#111827;">142</div>
+            </div>
+            <div style="border: 1px dashed #9ca3af; padding:8px; border-radius:4px; text-align:center;">
+              <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Acked</div>
+              <div style="font-size:1.25rem; font-weight:800; color:#111827;">139</div>
+            </div>
+            <div style="border: 1px dashed #9ca3af; padding:8px; border-radius:4px; text-align:center;">
+              <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Failed</div>
+              <div style="font-size:1.25rem; font-weight:800; color:#ef4444;">3</div>
+            </div>
+            <div style="border: 1px dashed #9ca3af; padding:8px; border-radius:4px; text-align:center;">
+              <div style="font-size:0.6rem; text-transform:uppercase; color:#6b7280;">Completed</div>
+              <div style="font-size:1.25rem; font-weight:800; color:#111827;">142</div>
+            </div>
+          </div>
+
+          <!-- Queue kind and status filter buttons -->
+          <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; border-top:1px dashed #e5e7eb; padding-top:10px;">
+            <span style="font-size:0.65rem; font-weight:700;">Filter Kinds:</span>
+            <button class="wire-btn" style="padding:4px 8px; font-size:0.7rem;">All Kinds</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Invoice</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Reminder</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Broadcast</button>
+
+            <span style="font-size:0.65rem; font-weight:700; margin-left:15px;">Filter Status:</span>
+            <button class="wire-btn" style="padding:4px 8px; font-size:0.7rem;">All Status</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Queued</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Sent</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Failed</button>
+          </div>
+
+          <!-- Queue Sub grids: Active Queue By Kind & Recent Send Activity -->
+          <div class="wire-grid-1-1">
+            <!-- Active Queue By Kind -->
+            <div style="border: 1.5px dashed #4b5563; border-radius:6px; padding:12px;">
+              <strong style="font-size:0.75rem; color:#111827; display:block; margin-bottom:8px;">Active Queue By Kind</strong>
+              <div style="border:1px dashed #9ca3af; padding:10px; border-radius:4px; display:flex; flex-direction:column; gap:6px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span class="wire-badge">INVOICE</span>
+                  <span style="font-weight:700;">3 queued</span>
+                </div>
+                <div style="font-size:0.65rem; color:#6b7280;">Batch running: Sending SPP Invoices</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:0.65rem; margin-top:4px;">
+                  <div style="background:#f3f4f6; padding:4px; border-radius:3px;">Next: 10:20</div>
+                  <div style="background:#f3f4f6; padding:4px; border-radius:3px;">ETA finish: 10:25</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Send Activity -->
+            <div style="border: 1.5px dashed #4b5563; border-radius:6px; padding:12px; display:flex; flex-direction:column;">
+              <strong style="font-size:0.75rem; color:#111827; display:block; margin-bottom:8px;">Recent Send Activity (Logs)</strong>
+              <div style="display:flex; flex-direction:column; gap:6px; flex:1; overflow-y:auto; max-height:120px;">
+                <div style="border:1px dashed #e5e7eb; padding:6px; border-radius:3px; display:flex; justify-content:space-between; align-items:center; font-size:0.7rem;">
+                  <div>
+                    <span class="wire-badge">INVOICE</span> <strong>08123456789</strong>
+                    <div style="font-size:0.6rem; color:#9ca3af; margin-top:2px;">Created: Today, 10:15</div>
+                  </div>
+                  <span class="wire-badge" style="background-color:#d1fae5; color:#065f46; border-color:#34d399;">ACKED</span>
+                </div>
+                <div style="border:1px dashed #e5e7eb; padding:6px; border-radius:3px; display:flex; justify-content:space-between; align-items:center; font-size:0.7rem;">
+                  <div>
+                    <span class="wire-badge" style="background-color:#fee2e2; color:#991b1b; border-color:#fca5a5;">REMINDER</span> <strong>08987654321</strong>
+                    <div style="font-size:0.6rem; color:#9ca3af; margin-top:2px;">Reason: Connection Timeout</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <span class="wire-badge">FAILED</span>
+                    <button class="wire-btn-outline" style="padding:1px 4px; font-size:0.6rem; display:block; margin-top:2px;">Retry</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Message Templates (Rill Detail) -->
+        <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+          <div class="wire-card-title">Message Templates Builder</div>
+          
+          <!-- Template selector sub-tabs -->
+          <div style="display:flex; gap:5px; border-bottom: 1px dashed #d1d5db; padding-bottom:4px;">
+            <button class="wire-btn" style="padding:4px 8px; font-size:0.7rem;">Invoice Sender</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Invoice Due Reminder</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Broadcast Message</button>
+            <button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Pesan Penerimaan</button>
+          </div>
+
+          <div class="wire-grid-2-1" style="grid-template-columns: 2fr 1fr;">
+            <!-- Left: Textarea template editor -->
+            <div>
+              <label class="wire-label" style="display:block; margin-bottom:5px;">Quick Tags</label>
+              <div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px;">
+                <span class="wire-badge" style="cursor:pointer;">+ Student Details</span>
+                <span class="wire-badge" style="cursor:pointer;">+ Month &amp; Year</span>
+                <span class="wire-badge" style="cursor:pointer;">+ Invoice Amount</span>
+                <span class="wire-badge" style="cursor:pointer;">+ Invoice Link</span>
+              </div>
+
+              <textarea class="wire-input" style="height:150px; font-family:'Fira Code', monospace; font-size:0.75rem;">*Tagihan SPP Online*
+Wirabhakti Basketball Club
+
+Kepada Yth. Bapak/Ibu Wali Murid,
+Kami informasikan tagihan SPP basket anak Anda:
+{{studentDetails}}
+
+*Bulan:* {{monthYear}}
+*Total Tagihan:* Rp {{invoiceAmount}}
+
+*Cek Nota &amp; Bayar:*
+{{invoiceUrl}}
+
+Terima kasih!</textarea>
+              <div style="text-align:right; margin-top:10px;">
+                <button class="wire-btn">Save Template</button>
+              </div>
+            </div>
+
+            <!-- Right: WhatsApp Live Preview Simulator -->
+            <div>
+              <label class="wire-label" style="display:block; margin-bottom:5px;">WhatsApp Live Preview</label>
+              <div class="wa-preview-body">
+                <div class="wa-bubble">
+*Tagihan SPP Online*
+Wirabhakti Basketball Club
+
+Kepada Yth. Bapak/Ibu Wali Murid,
+Kami informasikan tagihan SPP basket anak Anda:
+1. Nama: Budi Santoso (Basic)
+
+*Bulan:* Januari 2026
+*Total Tagihan:* Rp 350.000
+
+*Cek Nota &amp; Bayar:*
+https://app.wirabhakti.my.id/invoice/abc-123
+
+Terima kasih!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 6: ADMIN - WHATSAPP SERVER (#admin-waha)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-waha">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem active">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; WhatsApp Server</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">WhatsApp Gateway Status</h1>
+          <p class="page-subtitle">Manage system automated WhatsApp notification server connection.</p>
+        </div>
+
+        <div class="wire-grid-2-1" style="grid-template-columns: 2fr 1fr; flex: 1;">
+          <!-- Gateway status detailed -->
+          <div class="wire-canvas-sub block" style="display:flex; flex-direction:column; gap:20px; flex:1;">
+            <div class="wire-card" style="justify-content: flex-start; gap: 20px; flex:1;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <h3 style="font-size:0.9rem; font-weight:700;">Default Session status</h3>
+                  <span class="wire-badge" style="background:#d1fae5; color:#065f46; font-size:0.65rem; border-color:#34d399; margin-top:4px;">WORKING (CONNECTED)</span>
+                </div>
+                <button class="wire-btn-outline">Check Uptime</button>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; border-top:1px dashed #e5e7eb; padding-top:15px;">
+                <div class="wire-input-group">
+                  <label class="wire-label">Platform Engine</label>
+                  <div style="font-size:0.75rem; font-weight:600; padding:6px 0;">WAHA (WhatsApp HTTP API)</div>
+                </div>
+                <div class="wire-input-group">
+                  <label class="wire-label">Session ID</label>
+                  <div style="font-size:0.75rem; font-weight:600; padding:6px 0;"><code>default</code></div>
+                </div>
+                <div class="wire-input-group">
+                  <label class="wire-label">Linked Phone</label>
+                  <div style="font-size:0.75rem; font-weight:600; padding:6px 0;">0812-4486-6770</div>
+                </div>
+                <div class="wire-input-group">
+                  <label class="wire-label">Uptime</label>
+                  <div style="font-size:0.75rem; font-weight:600; padding:6px 0;">5 Hari, 12 Jam, 30 Menit</div>
+                </div>
+              </div>
+
+              <div style="border-top:1px dashed #e5e7eb; padding-top:15px; display:flex; gap:10px; margin-top:auto;">
+                <button class="wire-btn">Kirim Pesan Uji Coba</button>
+                <button class="wire-btn-outline" style="color:#ef4444; border-color:#fca5a5;">Putuskan Koneksi Sesi</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connection QR scan mockup -->
+          <div class="wire-card">
+            <div class="wire-card-title">Pairing QR Code</div>
+            <div class="image-placeholder" style="flex:1;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4" />
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4" />
+              </svg>
+              <span class="image-placeholder-label" style="text-align:center; font-size:0.6rem;">SESSION CONNECTED<br><small style="color:#6b7280;">No QR Required</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 7: ADMIN - ADMINISTRASI: SPONSORS (#admin-admin-sponsors)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-admin-sponsors">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem active">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Administrasi &gt; Sponsors</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Administration Management</h1>
+          <p class="page-subtitle">Manage academy landing page content, event announcements, and database.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button active">Sponsors</button>
+          <button class="tab-button">Events</button>
+          <button class="tab-button">Marketplace</button>
+          <button class="tab-button">News</button>
+          <button class="tab-button">Gallery</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <input type="text" class="wire-input" placeholder="Cari nama sponsor..." style="max-width:300px;">
+          <button class="wire-btn">+ Tambah Sponsor</button>
+        </div>
+
+        <!-- Grid Cards 4 Column -->
+        <div class="wire-grid-4" style="flex:1;">
+          <div class="wire-card" style="padding:10px; justify-content:space-between; align-items:center; gap:10px;">
+            <div class="image-placeholder" style="height: 100px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">LOGO MANDIRI</span>
+            </div>
+            <strong style="font-size:0.75rem;">Bank Mandiri</strong>
+            <span class="wire-badge">GOLD TIER</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; width:100%; font-size:0.65rem; border-top:1px dashed #e5e7eb; padding-top:6px;">
+              <span>Aktif</span>
+              <div class="wire-toggle active"></div>
+            </div>
+          </div>
+
+          <div class="wire-card" style="padding:10px; justify-content:space-between; align-items:center; gap:10px;">
+            <div class="image-placeholder" style="height: 100px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">LOGO DJARUM</span>
+            </div>
+            <strong style="font-size:0.75rem;">Djarum Foundation</strong>
+            <span class="wire-badge">GOLD TIER</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; width:100%; font-size:0.65rem; border-top:1px dashed #e5e7eb; padding-top:6px;">
+              <span>Aktif</span>
+              <div class="wire-toggle active"></div>
+            </div>
+          </div>
+
+          <div class="wire-card" style="padding:10px; justify-content:space-between; align-items:center; gap:10px;">
+            <div class="image-placeholder" style="height: 100px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">LOGO SPALDING</span>
+            </div>
+            <strong style="font-size:0.75rem;">Spalding Indonesia</strong>
+            <span class="wire-badge">SILVER TIER</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; width:100%; font-size:0.65rem; border-top:1px dashed #e5e7eb; padding-top:6px;">
+              <span>Aktif</span>
+              <div class="wire-toggle active"></div>
+            </div>
+          </div>
+
+          <div class="wire-card" style="padding:10px; justify-content:space-between; align-items:center; gap:10px;">
+            <div class="image-placeholder" style="height: 100px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">LOGO ORTUS</span>
+            </div>
+            <strong style="font-size:0.75rem;">Ortuseight Basketball</strong>
+            <span class="wire-badge">BRONZE TIER</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; width:100%; font-size:0.65rem; border-top:1px dashed #e5e7eb; padding-top:6px;">
+              <span>Aktif</span>
+              <div class="wire-toggle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 8: ADMIN - ADMINISTRASI: EVENTS (#admin-admin-events)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-admin-events">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem active">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Administrasi &gt; Events</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Administration Management</h1>
+          <p class="page-subtitle">Manage academy landing page content, event announcements, and database.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button">Sponsors</button>
+          <button class="tab-button active">Events</button>
+          <button class="tab-button">Marketplace</button>
+          <button class="tab-button">News</button>
+          <button class="tab-button">Gallery</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <input type="text" class="wire-input" placeholder="Cari nama event..." style="max-width:300px;">
+          <button class="wire-btn">+ Tambah Event Baru</button>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start;">
+          <table class="wire-table">
+            <thead>
+              <tr>
+                <th>Nama Event</th>
+                <th>Tanggal</th>
+                <th>Lokasi</th>
+                <th>Jumlah Peserta</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Wirabhakti Summer Cup 2026</strong></td>
+                <td>15 Juli 2026</td>
+                <td>GOR Wirabhakti</td>
+                <td>12 Tim Basket</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399;">PUBLISHED</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Edit</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Coaching Clinic with Coach Hermawan</strong></td>
+                <td>22 Juli 2026</td>
+                <td>Lapangan Utama</td>
+                <td>30 Peserta</td>
+                <td><span class="wire-badge">DRAFT</span></td>
+                <td>
+                  <button class="wire-btn" style="padding:2px 6px; font-size:0.65rem;">Publish</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Turnamen Internal KU-12</strong></td>
+                <td>10 Juni 2026</td>
+                <td>GOR Wirabhakti</td>
+                <td>8 Tim</td>
+                <td><span class="wire-badge" style="background:#e5e7eb;">COMPLETED</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Laporan</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 9: ADMIN - ADMINISTRASI: MARKETPLACE (#admin-admin-marketplace)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-admin-marketplace">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem active">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Administrasi &gt; Marketplace</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Administration Management</h1>
+          <p class="page-subtitle">Manage academy landing page content, event announcements, and database.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button">Sponsors</button>
+          <button class="tab-button">Events</button>
+          <button class="tab-button active">Marketplace</button>
+          <button class="tab-button">News</button>
+          <button class="tab-button">Gallery</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <div style="display:flex; gap:8px; flex:1;">
+            <input type="text" class="wire-input" placeholder="Cari produk..." style="max-width:300px;">
+            <select class="wire-input" style="max-width:150px;">
+              <option>Semua Kategori</option>
+              <option>Jersey</option>
+              <option>Accessories</option>
+              <option>Merch</option>
+            </select>
+          </div>
+          <button class="wire-btn">+ Tambah Produk Baru</button>
+        </div>
+
+        <div class="wire-grid-3" style="flex:1;">
+          <div class="wire-card" style="padding:12px; justify-content:space-between; gap:8px;">
+            <div class="image-placeholder" style="height:120px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">JERSEY PREVIEW</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; width:100%;">
+              <div>
+                <strong style="font-size:0.8rem; display:block;">Official Jersey Home 2026</strong>
+                <span style="font-size:0.65rem; color:#6b7280;">Kategori: Jersey</span>
+              </div>
+              <span class="wire-badge" style="background:#d1fae5; color:#065f46;">ACTIVE</span>
+            </div>
+            <div style="font-size:0.85rem; font-weight:800;">Rp 250.000</div>
+            <div style="font-size:0.65rem; color:#6b7280;">Stok: 45 Pcs</div>
+            <div style="border-top:1px dashed #e5e7eb; padding-top:8px; display:flex; gap:6px; width:100%; margin-top:4px;">
+              <button class="wire-btn-outline" style="flex:1; padding:4px;">Edit</button>
+              <button class="wire-btn-outline" style="flex:1; padding:4px;">Nonaktifkan</button>
+            </div>
+          </div>
+
+          <div class="wire-card" style="padding:12px; justify-content:space-between; gap:8px;">
+            <div class="image-placeholder" style="height:120px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">BALL PREVIEW</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; width:100%;">
+              <div>
+                <strong style="font-size:0.8rem; display:block;">Basketball Spalding TF-150</strong>
+                <span style="font-size:0.65rem; color:#6b7280;">Kategori: Accessories</span>
+              </div>
+              <span class="wire-badge" style="background:#d1fae5; color:#065f46;">ACTIVE</span>
+            </div>
+            <div style="font-size:0.85rem; font-weight:800;">Rp 350.000</div>
+            <div style="font-size:0.65rem; color:#6b7280;">Stok: 20 Pcs</div>
+            <div style="border-top:1px dashed #e5e7eb; padding-top:8px; display:flex; gap:6px; width:100%; margin-top:4px;">
+              <button class="wire-btn-outline" style="flex:1; padding:4px;">Edit</button>
+              <button class="wire-btn-outline" style="flex:1; padding:4px;">Nonaktifkan</button>
+            </div>
+          </div>
+
+          <div class="wire-card" style="padding:12px; justify-content:space-between; gap:8px;">
+            <div class="image-placeholder" style="height:120px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">HOODIE PREVIEW</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; width:100%;">
+              <div>
+                <strong style="font-size:0.8rem; display:block;">Hoodie Black Edition</strong>
+                <span style="font-size:0.65rem; color:#6b7280;">Kategori: Merch</span>
+              </div>
+              <span class="wire-badge">DRAFT</span>
+            </div>
+            <div style="font-size:0.85rem; font-weight:800;">Rp 300.000</div>
+            <div style="font-size:0.65rem; color:#6b7280;">Stok: 15 Pcs</div>
+            <div style="border-top:1px dashed #e5e7eb; padding-top:8px; display:flex; gap:6px; width:100%; margin-top:4px;">
+              <button class="wire-btn" style="flex:1; padding:4px;">Publish</button>
+              <button class="wire-btn-outline" style="flex:1; padding:4px;">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 10: ADMIN - ADMINISTRASI: NEWS (#admin-admin-news)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-admin-news">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem active">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Administrasi &gt; News</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Administration Management</h1>
+          <p class="page-subtitle">Manage academy landing page content, event announcements, and database.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button">Sponsors</button>
+          <button class="tab-button">Events</button>
+          <button class="tab-button">Marketplace</button>
+          <button class="tab-button active">News</button>
+          <button class="tab-button">Gallery</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <input type="text" class="wire-input" placeholder="Cari berita..." style="max-width:300px;">
+          <button class="wire-btn">+ Buat Berita Baru</button>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start;">
+          <table class="wire-table">
+            <thead>
+              <tr>
+                <th>Judul Artikel</th>
+                <th>Penulis</th>
+                <th>Kategori</th>
+                <th>Tanggal Rilis</th>
+                <th>Pembaca</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Pendaftaran Kelas Baru KU-10 Resmi Dibuka!</strong></td>
+                <td>Admin</td>
+                <td>Pengumuman</td>
+                <td>Hari Ini, 10:00</td>
+                <td>142 Views</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399;">PUBLISHED</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Edit</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Tips Meningkatkan Akurasi Free Throw bagi Pemula</strong></td>
+                <td>Coach Hermawan</td>
+                <td>Latihan</td>
+                <td>Kemarin, 14:20</td>
+                <td>89 Views</td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399;">PUBLISHED</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Edit</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Evaluasi Fisik Bulanan Atlet Wirabhakti Basket</strong></td>
+                <td>Coach Hermawan</td>
+                <td>Latihan</td>
+                <td>3 Hari Lalu</td>
+                <td>0 Views</td>
+                <td><span class="wire-badge">DRAFT</span></td>
+                <td>
+                  <button class="wire-btn" style="padding:2px 6px; font-size:0.65rem;">Publish</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 11: ADMIN - ADMINISTRASI: GALLERY (#admin-admin-gallery)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-admin-gallery">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem active">Administrasi</li>
+              <li class="menu-subitem">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Administrasi &gt; Gallery</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Administration Management</h1>
+          <p class="page-subtitle">Manage academy landing page content, event announcements, and database.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button">Sponsors</button>
+          <button class="tab-button">Events</button>
+          <button class="tab-button">Marketplace</button>
+          <button class="tab-button">News</button>
+          <button class="tab-button active">Gallery</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <select class="wire-input" style="max-width:180px;">
+            <option>Semua Kategori</option>
+            <option>Latihan</option>
+            <option>Turnamen</option>
+            <option>Acara</option>
+          </select>
+          <button class="wire-btn">+ Unggah Foto/Video</button>
+        </div>
+
+        <div class="wire-grid-3" style="flex:1;">
+          <div class="wire-card" style="padding:10px; justify-content:space-between; gap:10px;">
+            <div class="image-placeholder" style="height: 120px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">PREVIEW IMG 1</span>
+            </div>
+            <div>
+              <strong style="font-size:0.75rem; display:block;">Latihan Fisik KU-12 di GOR</strong>
+              <div style="font-size:0.65rem; color:#6b7280; margin-top:2px;">Kategori: Latihan | 20 Jun 2026</div>
+            </div>
+            <div style="border-top:1px dashed #e5e7eb; padding-top:6px; display:flex; gap:6px;">
+              <button class="wire-btn-outline" style="flex:1; padding:3px; font-size:0.65rem;">Edit</button>
+              <button class="wire-btn-outline" style="flex:1; padding:3px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+            </div>
+          </div>
+
+          <div class="wire-card" style="padding:10px; justify-content:space-between; gap:10px;">
+            <div class="image-placeholder" style="height: 120px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">PREVIEW IMG 2</span>
+            </div>
+            <div>
+              <strong style="font-size:0.75rem; display:block;">Penyerahan Piala Summer Cup</strong>
+              <div style="font-size:0.65rem; color:#6b7280; margin-top:2px;">Kategori: Turnamen | 18 Jun 2026</div>
+            </div>
+            <div style="border-top:1px dashed #e5e7eb; padding-top:6px; display:flex; gap:6px;">
+              <button class="wire-btn-outline" style="flex:1; padding:3px; font-size:0.65rem;">Edit</button>
+              <button class="wire-btn-outline" style="flex:1; padding:3px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+            </div>
+          </div>
+
+          <div class="wire-card" style="padding:10px; justify-content:space-between; gap:10px;">
+            <div class="image-placeholder" style="height: 120px;">
+              <svg>
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+              </svg>
+              <span style="font-size:0.65rem; color:#9ca3af; z-index:2;">PREVIEW IMG 3</span>
+            </div>
+            <div>
+              <strong style="font-size:0.75rem; display:block;">Keseruan Kelas KU-10</strong>
+              <div style="font-size:0.65rem; color:#6b7280; margin-top:2px;">Kategori: Latihan | 15 Jun 2026</div>
+            </div>
+            <div style="border-top:1px dashed #e5e7eb; padding-top:6px; display:flex; gap:6px;">
+              <button class="wire-btn-outline" style="flex:1; padding:3px; font-size:0.65rem;">Edit</button>
+              <button class="wire-btn-outline" style="flex:1; padding:3px; font-size:0.65rem; color:#ef4444; border-color:#fca5a5;">Hapus</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 12: ADMIN - KURIKULUM: OVERVIEW (#admin-kurikulum-overview)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-kurikulum-overview">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem active">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Kurikulum &gt; Overview &amp; Tracking</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Kurikulum &amp; Akademi</h1>
+          <p class="page-subtitle">Manage academy curriculum structured levels, class plotting, and academic tracking.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button active">Overview &amp; Tracking</button>
+          <button class="tab-button">Manajemen Master Kurikulum</button>
+          <button class="tab-button">Audit Metadata FUT</button>
+        </div>
+
+        <div class="wire-grid-3">
+          <div class="wire-card">
+            <div class="wire-card-title">Total Kelas Aktif</div>
+            <div class="wire-card-stat-val">6 Kelas</div>
+            <div class="wire-card-footer-text">Plotting KU-10 s/d KU-15</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Siswa Terplot</div>
+            <div class="wire-card-stat-val">330 Siswa</div>
+            <div class="wire-card-footer-text">96% Siswa terplot kelas</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Siswa Belum Terplot</div>
+            <div class="wire-card-stat-val" style="color: #ef4444;">12 Siswa</div>
+            <div class="wire-card-footer-text">Perlu dimasukkan ke kelas</div>
+          </div>
+        </div>
+
+        <div class="wire-grid-2-1" style="grid-template-columns: 2fr 1fr; flex: 1;">
+          <!-- Left: Kelas table -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
+            <div class="wire-card-title">Daftar Plotting Kelas Aktif</div>
+            <table class="wire-table">
+              <thead>
+                <tr>
+                  <th>Kelas</th>
+                  <th>Pelatih Utama</th>
+                  <th>Total Siswa</th>
+                  <th>Jadwal</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>KU-10 A</strong></td>
+                  <td>Coach Hermawan</td>
+                  <td>25 Siswa</td>
+                  <td>Sabtu, 08:00 - 10:00</td>
+                  <td>
+                    <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Plot Siswa</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>KU-12 A</strong></td>
+                  <td>Coach Hermawan</td>
+                  <td>28 Siswa</td>
+                  <td>Sabtu, 10:00 - 12:00</td>
+                  <td>
+                    <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Plot Siswa</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Right: Progres Kurikulum Global -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 15px;">
+            <div class="wire-card-title">Progres Silabus Global</div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.7rem; font-weight:600;">
+                  <span>DASAR (KU-10)</span>
+                  <span>85%</span>
+                </div>
+                <div class="wire-progress"><div class="wire-progress-fill" style="width: 85%;"></div></div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.7rem; font-weight:600;">
+                  <span>MENENGAH (KU-12)</span>
+                  <span>60%</span>
+                </div>
+                <div class="wire-progress"><div class="wire-progress-fill" style="width: 60%;"></div></div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.7rem; font-weight:600;">
+                  <span>LANJUTAN (KU-15)</span>
+                  <span>40%</span>
+                </div>
+                <div class="wire-progress"><div class="wire-progress-fill" style="width: 40%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 13: ADMIN - KURIKULUM: BUILDER (#admin-kurikulum-builder)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-kurikulum-builder">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem active">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Kurikulum &gt; Manajemen Master Kurikulum</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Kurikulum &amp; Akademi</h1>
+          <p class="page-subtitle">Manage academy curriculum structured levels, class plotting, and academic tracking.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button">Overview &amp; Tracking</button>
+          <button class="tab-button active">Manajemen Master Kurikulum</button>
+          <button class="tab-button">Audit Metadata FUT</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong style="font-size:0.85rem;">Master Silabus Kurikulum Builder</strong>
+            <p style="font-size:0.7rem; color:#6b7280;">Sesuaikan materi latihan per tingkat usia dan target kemampuan.</p>
+          </div>
+          <button class="wire-btn">+ Tambah Modul Kurikulum</button>
+        </div>
+
+        <!-- Curriculum Board Grid -->
+        <div class="wire-card" style="flex:1; justify-content:flex-start;">
+          <div class="curriculum-board">
+            <!-- Headers -->
+            <div></div>
+            <div class="curriculum-col-title">Bulan 1 - 2</div>
+            <div class="curriculum-col-title">Bulan 3 - 4</div>
+            <div class="curriculum-col-title">Bulan 5 - 6</div>
+
+            <!-- Row 1: Dasar -->
+            <div class="curriculum-row-header">DASAR (KU-10)</div>
+            <div class="curriculum-item-box">
+              <div>
+                <strong>Body Ctrl &amp; Footwork</strong>
+                <p style="color:#6b7280; margin-top:2px;">Fokus: Agility, Speed, Stance</p>
+              </div>
+              <span class="wire-badge" style="align-self:flex-start;">Target: 80%</span>
+            </div>
+            <div class="curriculum-item-box">
+              <div>
+                <strong>Ball Handling Basics</strong>
+                <p style="color:#6b7280; margin-top:2px;">Fokus: Dribble, Crossover</p>
+              </div>
+              <span class="wire-badge" style="align-self:flex-start;">Target: 80%</span>
+            </div>
+            <div class="curriculum-item-box">
+              <div>
+                <strong>Passing Mechanics</strong>
+                <p style="color:#6b7280; margin-top:2px;">Fokus: Chest &amp; Bounce Pass</p>
+              </div>
+              <span class="wire-badge" style="align-self:flex-start;">Target: 80%</span>
+            </div>
+
+            <!-- Row 2: Menengah -->
+            <div class="curriculum-row-header">MENENGAH (KU-12)</div>
+            <div class="curriculum-item-box">
+              <div>
+                <strong>Adv. Dribble &amp; Drive</strong>
+                <p style="color:#6b7280; margin-top:2px;">Fokus: Spin &amp; Behind back</p>
+              </div>
+              <span class="wire-badge" style="align-self:flex-start;">Target: 85%</span>
+            </div>
+            <div class="curriculum-item-box">
+              <div>
+                <strong>Shooting Mechanics</strong>
+                <p style="color:#6b7280; margin-top:2px;">Fokus: Jump shot, Free throw</p>
+              </div>
+              <span class="wire-badge" style="align-self:flex-start;">Target: 85%</span>
+            </div>
+            <div class="curriculum-item-box">
+              <div>
+                <strong>Tactical Defense</strong>
+                <p style="color:#6b7280; margin-top:2px;">Fokus: 1-on-1, Closeout</p>
+              </div>
+              <span class="wire-badge" style="align-self:flex-start;">Target: 85%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 14: ADMIN - KURIKULUM: AUDIT FUT (#admin-kurikulum-audit)
+       ========================================================================= -->
+  <div class="wire-canvas" id="admin-kurikulum-audit">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Data</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Data
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Manage Data User</li>
+              <li class="menu-subitem">User Credentials</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="menu-group-title">Admin</div>
+        <ul class="menu-list">
+          <li class="menu-item active-parent"><div class="menu-icon-box"></div> Admin
+            <ul class="menu-sublist">
+              <li class="menu-subitem">Notifications</li>
+              <li class="menu-subitem">Whatsapp Server</li>
+              <li class="menu-subitem">Administrasi</li>
+              <li class="menu-subitem active">Kurikulum &amp; Akademi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Super Admin</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Admin &gt; Kurikulum &gt; Audit Metadata FUT</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Kurikulum &amp; Akademi</h1>
+          <p class="page-subtitle">Manage academy curriculum structured levels, class plotting, and academic tracking.</p>
+        </div>
+
+        <div class="tab-list">
+          <button class="tab-button">Overview &amp; Tracking</button>
+          <button class="tab-button">Manajemen Master Kurikulum</button>
+          <button class="tab-button active">Audit Metadata FUT</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong style="font-size:0.85rem;">Audit &amp; Verifikasi Statistik Atlet (FUT Card)</strong>
+            <p style="font-size:0.7rem; color:#6b7280;">Setujui nilai statistik performa atlet sebelum dipublikasikan ke siswa dan orang tua.</p>
+          </div>
+          <button class="wire-btn">Sync Database</button>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start; flex: 1;">
+          <table class="wire-table">
+            <thead>
+              <tr>
+                <th>Siswa</th>
+                <th>Kelas</th>
+                <th>SPD</th>
+                <th>SHO</th>
+                <th>PAS</th>
+                <th>DRI</th>
+                <th>DEF</th>
+                <th>PHY</th>
+                <th>OVR</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Budi Santoso</strong></td>
+                <td>KU-10 A</td>
+                <td>85</td>
+                <td>80</td>
+                <td>75</td>
+                <td>88</td>
+                <td>70</td>
+                <td>78</td>
+                <td><strong>81</strong></td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399;">APPROVED</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Sync</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Detail</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Billy Pratama</strong></td>
+                <td>KU-10 A</td>
+                <td>78</td>
+                <td>85</td>
+                <td>82</td>
+                <td>80</td>
+                <td>74</td>
+                <td>80</td>
+                <td><strong>80</strong></td>
+                <td><span class="wire-badge" style="background:#fffbeb; color:#854d0e; border-color:#fcd34d;">PENDING AUDIT</span></td>
+                <td>
+                  <button class="wire-btn" style="padding:2px 6px; font-size:0.65rem;">Approve</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Clara Sinta</strong></td>
+                <td>KU-12 A</td>
+                <td>80</td>
+                <td>78</td>
+                <td>85</td>
+                <td>82</td>
+                <td>80</td>
+                <td>74</td>
+                <td><strong>80</strong></td>
+                <td><span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399;">APPROVED</span></td>
+                <td>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Sync</button>
+                  <button class="wire-btn-outline" style="padding:2px 6px; font-size:0.65rem;">Detail</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

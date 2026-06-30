@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Rancangan Wireframe Dashboard Orang Tua — Wirabhakti Basket Akademi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #4b5563;
+      color: #1f2937;
+      padding: 50px 0;
+    }
+
+    /* Standard A4/Desktop Canvas Frame */
+    .wire-canvas {
+      width: 1200px;
+      height: 800px;
+      background-color: #ffffff;
+      border: 2px solid #374151;
+      margin: 0 auto 80px auto;
+      display: flex;
+      position: relative;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    }
+
+    .wire-canvas::after {
+      content: "WIREFRAME MODEL - PARENT ROLE";
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #9ca3af;
+      pointer-events: none;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 260px;
+      border-right: 2px dashed #9ca3af;
+      background-color: #ffffff;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .brand-section {
+      margin-bottom: 20px;
+    }
+
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .brand-logo-placeholder {
+      width: 24px;
+      height: 24px;
+      border: 2px dashed #4b5563;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: bold;
+    }
+
+    .brand-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .menu-group-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 15px;
+      margin-bottom: 6px;
+    }
+
+    .menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .menu-item {
+      padding: 8px 12px;
+      border: 1px dashed #e5e7eb;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-item.active {
+      background-color: #f3f4f6;
+      border: 1.5px solid #4b5563;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .menu-icon-box {
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid currentColor;
+      border-radius: 2px;
+    }
+
+    .sidebar-footer {
+      font-size: 0.7rem;
+      color: #9ca3af;
+      border-top: 1px dashed #e5e7eb;
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar-avatar-placeholder {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1.5px dashed #9ca3af;
+      background-color: #f9fafb;
+    }
+
+    /* Main Container layout */
+    .main-viewport {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+    }
+
+    /* Top Navigation bar */
+    .navbar {
+      height: 64px;
+      border-bottom: 2px dashed #9ca3af;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-breadcrumbs {
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* Workspace Content Body */
+    .workspace-body {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: 5px;
+    }
+
+    .page-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .page-subtitle {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    /* Grid system */
+    .wire-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .wire-grid-2-1 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .wire-grid-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    /* Wireframe Card/Component elements */
+    .wire-card {
+      border: 1.5px dashed #4b5563;
+      border-radius: 6px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .wire-card-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #4b5563;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #e5e7eb;
+      padding-bottom: 4px;
+    }
+
+    .wire-card-stat-val {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #111827;
+      margin: 4px 0;
+    }
+
+    .wire-card-footer-text {
+      font-size: 0.65rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* Button styles */
+    .wire-btn {
+      background-color: #4b5563;
+      color: #ffffff;
+      border: none;
+      padding: 8px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .wire-btn-outline {
+      background-color: transparent;
+      border: 1.5px dashed #4b5563;
+      color: #4b5563;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Table Layouts */
+    .wire-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+
+    .wire-table th {
+      background-color: #f3f4f6;
+      border: 1px dashed #9ca3af;
+      padding: 6px 10px;
+      text-align: left;
+      font-weight: 700;
+      color: #374151;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+
+    .wire-table td {
+      border: 1px dashed #9ca3af;
+      padding: 6px 10px;
+      color: #4b5563;
+    }
+
+    .wire-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid #4b5563;
+      background-color: #f3f4f6;
+    }
+
+    /* Form Fields */
+    .wire-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .wire-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #4b5563;
+      text-transform: uppercase;
+    }
+
+    .wire-input {
+      padding: 6px 10px;
+      border: 1.5px dashed #9ca3af;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: #1f2937;
+      background: #ffffff;
+      width: 100%;
+    }
+
+    /* Calendar log grid */
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+
+    .calendar-day {
+      aspect-ratio: 1.2;
+      border: 1px dashed #9ca3af;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .calendar-day.present {
+      background-color: #d1fae5;
+      border-color: #34d399;
+      color: #065f46;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SUBMODULE 1: PARENT - MONITORING OVERVIEW (#parent-dashboard-overview)
+       ========================================================================= -->
+  <div class="wire-canvas" id="parent-dashboard-overview">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Orang Tua Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item active"><div class="menu-icon-box"></div> Anak Saya</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Tagihan SPP</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Laporan Perkembangan</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Achievements Anak</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Wali Budi</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Parent &gt; Monitoring Anak Saya</div>
+        <div style="font-size:0.75rem; display:flex; align-items:center; gap:8px;">
+          <span>Pilih Anak:</span>
+          <select class="wire-input" style="padding:2px 8px; width:150px; font-size:0.7rem;">
+            <option>Budi Santoso</option>
+          </select>
+        </div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Monitoring Aktivitas Anak</h1>
+          <p class="page-subtitle">Pantau kehadiran kelas, status tagihan bulanan SPP, dan nilai kemampuan basket Budi Santoso.</p>
+        </div>
+
+        <div class="wire-grid-3">
+          <div class="wire-card">
+            <div class="wire-card-title">FUT OVR Rating Anak</div>
+            <div class="wire-card-stat-val">81 OVR</div>
+            <div class="wire-card-footer-text">Posisi Utama: Guard</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Status Tagihan SPP</div>
+            <div class="wire-card-stat-val" style="color: #ef4444;">1 Belum Bayar</div>
+            <div class="wire-card-footer-text">SPP Bulan Juni 2026</div>
+          </div>
+          <div class="wire-card">
+            <div class="wire-card-title">Kehadiran Latihan</div>
+            <div class="wire-card-stat-val">100% Hadir</div>
+            <div class="wire-card-footer-text">4 Sesi Terakhir (Juni)</div>
+          </div>
+        </div>
+
+        <div class="wire-grid-2-1">
+          <!-- Quick actions/Latest notification -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 12px;">
+            <div class="wire-card-title">Latihan Terdekat &amp; Riwayat Terakhir</div>
+            <div style="background:#f9fafb; border:1px dashed #9ca3af; padding:12px; border-radius:6px; font-size:0.75rem;">
+              <strong>Sesi Sabtu Depan (27 Juni 2026)</strong>
+              <p style="color:#6b7280; margin-top:4px;">Materi: Passing Mechanics<br>Jadwal: 08:00 - 10:00 WIB<br>Lokasi: Lapangan Utama GOR</p>
+            </div>
+          </div>
+
+          <!-- Coach feedback widget -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 8px;">
+            <div class="wire-card-title">Catatan Ringkas Pelatih</div>
+            <p style="font-size:0.7rem; line-height:1.4; color:#4b5563;">
+              "Budi menunjukkan perkembangan dribbling yang sangat pesat minggu ini. Kemampuan ball handling tangan kirinya meningkat tajam saat latihan..."
+            </p>
+            <a href="#" style="font-size:0.65rem; color:#4b5563; font-weight:700; margin-top:auto;">Lihat Selengkapnya &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 2: PARENT - FINANCIALS (#parent-financials)
+       ========================================================================= -->
+  <div class="wire-canvas" id="parent-financials">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Orang Tua Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Anak Saya</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Tagihan SPP</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Laporan Perkembangan</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Achievements Anak</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Wali Budi</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Parent &gt; Tagihan SPP Murid</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Tagihan &amp; Pembayaran SPP</h1>
+          <p class="page-subtitle">Kelola dan lunasi pembayaran SPP bulanan anak Anda via Midtrans payment gateway.</p>
+        </div>
+
+        <div class="wire-card" style="justify-content: flex-start; gap: 15px; flex:1;">
+          <div class="wire-card-title">Daftar Tagihan SPP Aktif</div>
+          
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <!-- Unpaid Invoice -->
+            <div style="border:1.5px solid #ef4444; border-radius:6px; padding:12px; display:flex; justify-content:space-between; align-items:center; background:#fff8f8;">
+              <div>
+                <strong style="font-size:0.8rem; display:block; color:#b91c1c;">Tagihan SPP Juni 2026</strong>
+                <span style="font-size:0.65rem; color:#6b7280;">Jatuh Tempo: 10 Jun 2026</span>
+              </div>
+              <div style="text-align:right; display:flex; flex-direction:column; gap:6px;">
+                <strong style="font-size:0.9rem; color:#ef4444;">Rp 350.000</strong>
+                <button class="wire-btn" style="background:#10b981; font-size:0.7rem; padding:4px 8px;">Bayar (Midtrans)</button>
+              </div>
+            </div>
+
+            <!-- Paid Invoice -->
+            <div style="border:1px dashed #cbd5e1; border-radius:6px; padding:12px; display:flex; justify-content:space-between; align-items:center; background:#f9fafb;">
+              <div>
+                <strong style="font-size:0.8rem; display:block;">Tagihan SPP Mei 2026</strong>
+                <span style="font-size:0.65rem; color:#6b7280;">Terbayar Lunas: 03 Mei 2026</span>
+              </div>
+              <div style="text-align:right;">
+                <strong style="font-size:0.9rem; color:#10b981;">Rp 350.000</strong>
+                <span class="wire-badge" style="background:#d1fae5; color:#065f46; border-color:#34d399; margin-top:4px; display:block;">LUNAS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 3: PARENT - REPORTS (#parent-reports)
+       ========================================================================= -->
+  <div class="wire-canvas" id="parent-reports">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Orang Tua Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Anak Saya</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Tagihan SPP</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Laporan Perkembangan</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Achievements Anak</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Wali Budi</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Parent &gt; Laporan Perkembangan</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Laporan Perkembangan &amp; Kehadiran</h1>
+          <p class="page-subtitle">Pantau grafik kehadiran latihan rutin bulanan dan evaluasi taktis dari pelatih di lapangan.</p>
+        </div>
+
+        <div class="wire-grid-2-1" style="grid-template-columns: 1fr 1fr; flex:1;">
+          <!-- Attendance Calendar Log -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 12px;">
+            <div class="wire-card-title">Kalender Kehadiran Latihan (Juni 2026)</div>
+            
+            <div class="calendar-grid">
+              <!-- Header days -->
+              <div style="text-align:center; font-size:0.6rem; font-weight:700;">Sn</div>
+              <div style="text-align:center; font-size:0.6rem; font-weight:700;">Sl</div>
+              <div style="text-align:center; font-size:0.6rem; font-weight:700;">Rb</div>
+              <div style="text-align:center; font-size:0.6rem; font-weight:700;">Km</div>
+              <div style="text-align:center; font-size:0.6rem; font-weight:700;">Jm</div>
+              <div style="text-align:center; font-size:0.6rem; font-weight:700;">Sb</div>
+              <div style="text-align:center; font-size:0.6rem; font-weight:700;">Mg</div>
+
+              <!-- Calendar Days -->
+              <div class="calendar-day">1</div>
+              <div class="calendar-day">2</div>
+              <div class="calendar-day present">3</div> <!-- Hadir -->
+              <div class="calendar-day">4</div>
+              <div class="calendar-day">5</div>
+              <div class="calendar-day present">6</div> <!-- Hadir -->
+              <div class="calendar-day">7</div>
+              <div class="calendar-day">8</div>
+              <div class="calendar-day">9</div>
+              <div class="calendar-day present">10</div> <!-- Hadir -->
+              <div class="calendar-day">11</div>
+              <div class="calendar-day">12</div>
+              <div class="calendar-day present">13</div> <!-- Hadir -->
+              <div class="calendar-day">14</div>
+            </div>
+            
+            <div style="display:flex; justify-content:space-between; font-size:0.65rem; font-weight:600; margin-top:auto; border-top:1px dashed #cbd5e1; padding-top:10px;">
+              <span>Total Latihan: 4 Kali</span>
+              <span style="color:#10b981;">Tingkat Kehadiran: 100%</span>
+            </div>
+          </div>
+
+          <!-- Coach feedback detailed -->
+          <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
+            <div class="wire-card-title">Evaluasi Pelatih Tambahan</div>
+            <div style="background:#f9fafb; border:1px dashed #cbd5e1; padding:12px; border-radius:6px; font-size:0.75rem; flex:1;">
+              <p style="line-height:1.4; color:#4b5563;">
+                "Budi menunjukkan perkembangan dribbling yang sangat pesat minggu ini. Kemampuan ball handling tangan kirinya meningkat tajam saat latihan drill taktis. Perlu diperhatikan konsistensi posisi badan saat bertahan (defensive stance)."
+              </p>
+              <div style="font-size:0.65rem; color:#9ca3af; margin-top:15px; text-align:right;">
+                — Diinput oleh Coach Hermawan (20 Jun 2026)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SUBMODULE 4: PARENT - BADGES (#parent-badges)
+       ========================================================================= -->
+  <div class="wire-canvas" id="parent-badges">
+    <div class="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo-container">
+          <div class="brand-logo-placeholder">W</div>
+          <div class="brand-title">WIRABHAKTI</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-group-title">Orang Tua Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="menu-icon-box"></div> Anak Saya</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Tagihan SPP</li>
+          <li class="menu-item"><div class="menu-icon-box"></div> Laporan Perkembangan</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Achievements Anak</li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><div class="sidebar-avatar-placeholder"></div><strong>Wali Budi</strong></div>
+    </div>
+
+    <div class="main-viewport">
+      <div class="navbar">
+        <div class="navbar-breadcrumbs">Parent &gt; Achievements Anak</div>
+      </div>
+      <div class="workspace-body">
+        <div class="page-header">
+          <h1 class="page-title">Prestasi &amp; Medali Anak Saya</h1>
+          <p class="page-subtitle">Daftar medali, badge, dan pencapaian penghargaan yang diperoleh Budi Santoso.</p>
+        </div>
+
+        <div class="wire-grid-3" style="flex:1;">
+          <div class="wire-card" style="padding:15px; align-items:center; text-align:center; gap:8px;">
+            <div style="width:50px; height:50px; border-radius:50%; border:2px dashed #10b981; display:flex; align-items:center; justify-content:center; font-size:1.25rem;">🏅</div>
+            <strong style="font-size:0.8rem;">Attendance Master</strong>
+            <p style="font-size:0.65rem; color:#6b7280;">Budi telah menghadiri 10 kali latihan berturut-turut.</p>
+            <span class="wire-badge" style="background:#d1fae5; color:#065f46; font-size:0.55rem; border-color:#34d399; margin-top:5px;">TERCAPAI</span>
+          </div>
+
+          <div class="wire-card" style="padding:15px; align-items:center; text-align:center; gap:8px;">
+            <div style="width:50px; height:50px; border-radius:50%; border:2px dashed #10b981; display:flex; align-items:center; justify-content:center; font-size:1.25rem;">🏀</div>
+            <strong style="font-size:0.8rem;">First Shot</strong>
+            <p style="font-size:0.65rem; color:#6b7280;">Budi menyelesaikan penilaian shooting pertamanya.</p>
+            <span class="wire-badge" style="background:#d1fae5; color:#065f46; font-size:0.55rem; border-color:#34d399; margin-top:5px;">TERCAPAI</span>
+          </div>
+
+          <div class="wire-card" style="padding:15px; align-items:center; text-align:center; gap:8px; opacity:0.5;">
+            <div style="width:50px; height:50px; border-radius:50%; border:2px dashed #9ca3af; display:flex; align-items:center; justify-content:center; font-size:1.25rem;">⚡</div>
+            <strong style="font-size:0.8rem;">Level 50 Warrior</strong>
+            <p style="font-size:0.65rem; color:#6b7280;">Mencapai Level XP 50 di akademi basket.</p>
+            <span class="wire-badge" style="font-size:0.55rem; margin-top:5px;">BELUM TERCAPAI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

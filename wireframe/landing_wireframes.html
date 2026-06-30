@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Rancangan Wireframe Landing Page — Wirabhakti Basket Akademi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #4b5563;
+      color: #1f2937;
+      padding: 50px 0;
+    }
+
+    /* Standard A4/Desktop Canvas Frame */
+    .wire-canvas {
+      width: 1200px;
+      height: 800px;
+      background-color: #ffffff;
+      border: 2px solid #374151;
+      margin: 0 auto 80px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .wire-canvas::after {
+      content: "WIREFRAME MODEL - PUBLIC LANDING PAGE";
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #9ca3af;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Landing Header / Navbar */
+    .landing-header {
+      height: 64px;
+      border-bottom: 2px dashed #9ca3af;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      z-index: 10;
+    }
+
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo-box {
+      width: 28px;
+      height: 28px;
+      border: 2px dashed #4b5563;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .brand-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #111827;
+      text-transform: uppercase;
+    }
+
+    .nav-links-list {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-link-item {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #4b5563;
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 1px dashed transparent;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-link-item.active {
+      border-color: #374151;
+      color: #111827;
+      background-color: #f3f4f6;
+      font-weight: 800;
+    }
+
+    .nav-auth-btn {
+      background-color: transparent;
+      border: 1.5px solid #374151;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 20px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Landing Content Viewport */
+    .landing-content {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      background-color: #ffffff;
+      overflow-y: auto;
+    }
+
+    /* Page Titles and Subtitles */
+    .section-title-area {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .section-main-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    /* Grids & Cards */
+    .wire-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .wire-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .wire-card {
+      border: 1.5px dashed #4b5563;
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .wire-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid #4b5563;
+      background-color: #f3f4f6;
+      width: fit-content;
+    }
+
+    /* Buttons */
+    .wire-btn {
+      background-color: #374151;
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .wire-btn-outline {
+      background-color: transparent;
+      border: 1.5px dashed #4b5563;
+      color: #4b5563;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Image Placeholder Box containing cross lines */
+    .image-placeholder {
+      border: 1.5px dashed #9ca3af;
+      background-color: #f9fafb;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .image-placeholder svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .image-placeholder-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #9ca3af;
+      z-index: 5;
+      background: #ffffff;
+      padding: 4px 8px;
+      border: 1px dashed #d1d5db;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Landing Footer */
+    .landing-footer {
+      height: 72px;
+      border-top: 2px dashed #9ca3af;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f9fafb;
+      z-index: 10;
+    }
+
+    .footer-left {
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-link {
+      font-size: 0.75rem;
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Hero Layout Home */
+    .hero-layout {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .hero-info {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero-title-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #4b5563;
+      border: 1.5px solid #4b5563;
+      padding: 4px 10px;
+      border-radius: 20px;
+      width: fit-content;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.05;
+      color: #111827;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+      color: #4b5563;
+      line-height: 1.4;
+    }
+
+    .hero-btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .hero-image-area {
+      flex: 0.8;
+      height: 250px;
+      border-radius: 8px;
+    }
+
+    /* Stats Row Home */
+    .stats-row {
+      display: flex;
+      border: 1.5px dashed #4b5563;
+      border-radius: 6px;
+      padding: 12px;
+      background-color: #f9fafb;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+
+    .stat-separator {
+      width: 1px;
+      height: 24px;
+      border-left: 1.5px dashed #d1d5db;
+    }
+
+    /* Program Section Home */
+    .program-compact-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .program-header-small {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .program-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .program-card-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .program-features-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .program-feature-item {
+      font-size: 0.7rem;
+      color: #4b5563;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .program-feature-item::before {
+      content: "•";
+      font-weight: bold;
+    }
+
+    /* Partners list */
+    .partners-row {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    .partner-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+    }
+
+    .partner-logo-box {
+      width: 100px;
+      height: 30px;
+      border: 1px dashed #d1d5db;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #9ca3af;
+    }
+
+    /* Programs Page Styling */
+    .program-detail-card {
+      display: flex;
+      gap: 24px;
+      border: 1.5px dashed #4b5563;
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .program-detail-info {
+      flex: 1.3;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .program-detail-img {
+      flex: 0.7;
+      height: 200px;
+      border-radius: 6px;
+    }
+
+    .program-detail-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      border-top: 1px dashed #e5e7eb;
+      border-bottom: 1px dashed #e5e7eb;
+      padding: 12px 0;
+      margin: 4px 0;
+    }
+
+    /* Coach Profile Layout */
+    .coach-card {
+      display: flex;
+      flex-direction: column;
+      border: 1.5px dashed #4b5563;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .coach-image-wrapper {
+      height: 200px;
+      border-bottom: 1.5px dashed #e5e7eb;
+    }
+
+    .coach-info-wrapper {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .coach-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #111827;
+      text-transform: uppercase;
+    }
+
+    .coach-role {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .coach-exp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .coach-exp-item {
+      font-size: 0.7rem;
+      color: #4b5563;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* Gallery Page Styling */
+    .gallery-filter-tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+
+    .gallery-tab {
+      padding: 6px 14px;
+      border: 1px dashed #9ca3af;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: none;
+      color: #4b5563;
+    }
+
+    .gallery-tab.active {
+      background-color: #f3f4f6;
+      border-color: #374151;
+      color: #111827;
+      font-weight: 800;
+    }
+
+    .gallery-item-card {
+      border: 1.5px dashed #4b5563;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-item-img {
+      flex: 1;
+    }
+
+    .gallery-badge-top-left {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+
+    .gallery-badge-top-right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid #4b5563;
+      padding: 2px 6px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+
+    .gallery-item-info {
+      padding: 10px 12px;
+      border-top: 1px dashed #e5e7eb;
+      background-color: #ffffff;
+    }
+
+    .gallery-item-date {
+      font-size: 0.6rem;
+      color: #9ca3af;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .gallery-item-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #111827;
+      text-transform: uppercase;
+    }
+
+    /* Location page structure */
+    .location-box {
+      border: 1.5px dashed #4b5563;
+      border-radius: 8px;
+      padding: 24px;
+      background-color: #f9fafb;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .location-info-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .location-icon-placeholder {
+      width: 20px;
+      height: 20px;
+      border: 1px dashed #4b5563;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: bold;
+    }
+
+    .location-info-content {
+      font-size: 0.75rem;
+      color: #4b5563;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .location-info-content strong {
+      color: #111827;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .map-placeholder {
+      border: 1.5px dashed #4b5563;
+      border-radius: 8px;
+      flex: 1;
+      min-height: 300px;
+    }
+
+    /* News Page Style */
+    .featured-news-card {
+      display: flex;
+      border: 1.5px dashed #4b5563;
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 16px;
+      gap: 20px;
+      background-color: #ffffff;
+    }
+
+    .featured-news-img {
+      flex: 0.9;
+      height: 180px;
+      border-radius: 6px;
+    }
+
+    .featured-news-content {
+      flex: 1.1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .featured-news-header {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .featured-news-date {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #9ca3af;
+    }
+
+    .featured-news-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .featured-news-desc {
+      font-size: 0.75rem;
+      color: #4b5563;
+      line-height: 1.4;
+    }
+
+    .news-grid-item {
+      border: 1.5px dashed #4b5563;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-grid-img {
+      height: 120px;
+    }
+
+    .news-grid-info {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .news-grid-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #111827;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .news-grid-desc {
+      font-size: 0.7rem;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       HALAMAN 1: HOME (BERANDA) - #landing-home
+       ========================================================================= -->
+  <div class="wire-canvas" id="landing-home">
+    <div class="landing-header">
+      <div class="brand-container">
+        <div class="brand-logo-box">W</div>
+        <div class="brand-name">Wirabhakti Academy</div>
+      </div>
+      <ul class="nav-links-list">
+        <li><a href="#" class="nav-link-item active">Beranda</a></li>
+        <li><a href="#" class="nav-link-item">Program</a></li>
+        <li><a href="#" class="nav-link-item">Pelatih</a></li>
+        <li><a href="#" class="nav-link-item">Galeri</a></li>
+        <li><a href="#" class="nav-link-item">Lokasi</a></li>
+        <li><a href="#" class="nav-link-item">Berita</a></li>
+      </ul>
+      <button class="nav-auth-btn">Masuk Portal</button>
+    </div>
+
+    <div class="landing-content">
+      <div class="hero-layout">
+        <div class="hero-info">
+          <div class="hero-title-badge">Pendaftaran Dibuka</div>
+          <h1 class="hero-title">MEMBANGUN JUARA SEJAK USIA DINI</h1>
+          <p class="hero-subtitle">Wirabhakti Basket Akademi melatih fisik, mental, dan teknik terbaik untuk mempersiapkan atlet muda Lumajang menuju tingkat profesional.</p>
+          <div class="hero-btn-row">
+            <button class="wire-btn">Hubungi WhatsApp</button>
+            <button class="wire-btn-outline">Lihat Detail Program</button>
+          </div>
+        </div>
+        <div class="image-placeholder hero-image-area">
+          <svg width="100%" height="100%">
+            <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+          </svg>
+          <span class="image-placeholder-label">Foto Aksi Basket / Hero Banner</span>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-number">74+</div>
+          <div class="stat-label">Siswa Aktif</div>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="stat-item">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Pelatih Pro</div>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="stat-item">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Arena Latihan</div>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="stat-item">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Piala Kemenangan</div>
+        </div>
+      </div>
+
+      <div class="program-compact-section">
+        <div class="program-header-small">Program Unggulan</div>
+        <div class="wire-grid-2">
+          <div class="wire-card">
+            <div class="program-card-content">
+              <span class="wire-badge">Usia 13 - 18 Tahun</span>
+              <h3 class="program-card-title">Elite Academy</h3>
+              <p class="hero-subtitle" style="font-size: 0.75rem; margin-top: 2px;">Fokus strategi tim, fisik tingkat lanjut, dan kompetisi nasional.</p>
+              <ul class="program-features-list">
+                <li class="program-feature-item">5x Latihan Seminggu</li>
+                <li class="program-feature-item">Video Analysis</li>
+                <li class="program-feature-item">Strength Training</li>
+                <li class="program-feature-item">Liga Nasional</li>
+              </ul>
+            </div>
+          </div>
+          <div class="wire-card">
+            <div class="program-card-content">
+              <span class="wire-badge">Usia 6 - 12 Tahun</span>
+              <h3 class="program-card-title">Junior Starter</h3>
+              <p class="hero-subtitle" style="font-size: 0.75rem; margin-top: 2px;">Membangun fundamental, koordinasi dasar, dan kesenangan bermain.</p>
+              <ul class="program-features-list">
+                <li class="program-feature-item">2x Latihan Seminggu</li>
+                <li class="program-feature-item">Fun Games</li>
+                <li class="program-feature-item">Teknik Dribble/Shoot</li>
+                <li class="program-feature-item">Evaluasi Berkala</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners-row">
+        <span class="partner-label">Didukung Oleh:</span>
+        <div class="partner-logo-box">DBL INDONESIA</div>
+        <div class="partner-logo-box">GOR WIRABHAKTI</div>
+        <div class="partner-logo-box">SPONSOR LOKAL</div>
+      </div>
+    </div>
+
+    <div class="landing-footer">
+      <div class="footer-left">
+        <strong>Wirabhakti Basket Akademi © 2026</strong>. Semua hak cipta dilindungi.
+      </div>
+      <div class="footer-right">
+        <a href="#" class="footer-link">Kebijakan Privasi</a>
+        <a href="#" class="footer-link">Syarat & Ketentuan</a>
+        <a href="#" class="footer-link">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HALAMAN 2: PROGRAMS (PROGRAM DETAIL) - #landing-programs
+       ========================================================================= -->
+  <div class="wire-canvas" id="landing-programs">
+    <div class="landing-header">
+      <div class="brand-container">
+        <div class="brand-logo-box">W</div>
+        <div class="brand-name">Wirabhakti Academy</div>
+      </div>
+      <ul class="nav-links-list">
+        <li><a href="#" class="nav-link-item">Beranda</a></li>
+        <li><a href="#" class="nav-link-item active">Program</a></li>
+        <li><a href="#" class="nav-link-item">Pelatih</a></li>
+        <li><a href="#" class="nav-link-item">Galeri</a></li>
+        <li><a href="#" class="nav-link-item">Lokasi</a></li>
+        <li><a href="#" class="nav-link-item">Berita</a></li>
+      </ul>
+      <button class="nav-auth-btn">Masuk Portal</button>
+    </div>
+
+    <div class="landing-content">
+      <div class="section-title-area">
+        <h1 class="section-main-title">PROGRAM KEPELATIHAN KAMI</h1>
+        <p class="section-subtitle">Didesain khusus untuk mematangkan potensi anak sesuai kelompok umur dan kemampuannya.</p>
+      </div>
+
+      <div class="program-detail-card">
+        <div class="program-detail-info">
+          <span class="wire-badge">Usia 13 - 18 Tahun</span>
+          <h2 class="program-card-title" style="font-size: 1.3rem;">Elite Academy (Kompetisi & Prestasi)</h2>
+          <p class="hero-subtitle" style="font-size: 0.75rem; line-height: 1.4;">
+            Program latihan intensif yang dirancang bagi atlet muda potensial untuk bersaing di tingkat kompetisi daerah maupun nasional. 
+            Materi mencakup penguatan pemahaman strategi basket kompleks, analisis video performa, peningkatan daya tahan fisik (S&C), 
+            serta evaluasi performa kuantitatif menggunakan sistem data kartu FUT Card Wirabhakti.
+          </p>
+          <div class="program-detail-features-grid">
+            <div class="program-feature-item" style="font-size: 0.75rem;"><strong>5x Pertemuan/Minggu</strong> (Senin s.d Jumat)</div>
+            <div class="program-feature-item" style="font-size: 0.75rem;"><strong>Sertifikasi FUT Card</strong> (Evaluasi Fisik/Skill)</div>
+            <div class="program-feature-item" style="font-size: 0.75rem;"><strong>Strength & Conditioning</strong> di Gym Center</div>
+            <div class="program-feature-item" style="font-size: 0.75rem;"><strong>Akses Turnamen Nasional</strong> & Kejuaraan Daerah</div>
+          </div>
+          <button class="wire-btn" style="width: fit-content;">Daftar Program Elite</button>
+        </div>
+        <div class="image-placeholder program-detail-img">
+          <svg width="100%" height="100%">
+            <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+          </svg>
+          <span class="image-placeholder-label">Foto Latihan Elite Academy</span>
+        </div>
+      </div>
+
+      <div class="program-detail-card">
+        <div class="program-detail-info">
+          <span class="wire-badge">Usia 6 - 12 Tahun</span>
+          <h2 class="program-card-title" style="font-size: 1.3rem;">Junior Starter (Fundamental & Fun)</h2>
+          <p class="hero-subtitle" style="font-size: 0.75rem; line-height: 1.4;">
+            Program pembinaan usia dini yang memfokuskan pada penguasaan gerakan fundamental bola basket (Dribbling, Passing, Footwork, Shooting) 
+            disertai dengan permainan edukatif yang menyenangkan. Sangat cocok untuk melatih kebugaran motorik anak, sportivitas, 
+            dan kerja sama tim dalam suasana latihan yang ceria.
+          </p>
+          <div class="program-detail-features-grid">
+            <div class="program-feature-item" style="font-size: 0.75rem;"><strong>2x Pertemuan/Minggu</strong> (Sabtu & Minggu)</div>
+            <div class="program-feature-item" style="font-size: 0.75rem;"><strong>Evaluasi Raport Skill</strong> Setiap Triwulan</div>
+            <div class="program-feature-item" style="font-size: 0.75rem;"><strong>Fun Basketball Games</strong> & Mini Tournament</div>
+            <div class="program-feature-item" style="font-size: 0.75rem;"><strong>Pelatih Berlisensi</strong> Spesialis Anak Usia Dini</div>
+          </div>
+          <button class="wire-btn" style="width: fit-content;">Daftar Program Junior</button>
+        </div>
+        <div class="image-placeholder program-detail-img">
+          <svg width="100%" height="100%">
+            <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+          </svg>
+          <span class="image-placeholder-label">Foto Latihan Junior Starter</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-footer">
+      <div class="footer-left">
+        <strong>Wirabhakti Basket Akademi © 2026</strong>. Semua hak cipta dilindungi.
+      </div>
+      <div class="footer-right">
+        <a href="#" class="footer-link">Kebijakan Privasi</a>
+        <a href="#" class="footer-link">Syarat & Ketentuan</a>
+        <a href="#" class="footer-link">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HALAMAN 3: COACHES (DAFTAR PELATIH) - #landing-coaches
+       ========================================================================= -->
+  <div class="wire-canvas" id="landing-coaches">
+    <div class="landing-header">
+      <div class="brand-container">
+        <div class="brand-logo-box">W</div>
+        <div class="brand-name">Wirabhakti Academy</div>
+      </div>
+      <ul class="nav-links-list">
+        <li><a href="#" class="nav-link-item">Beranda</a></li>
+        <li><a href="#" class="nav-link-item">Program</a></li>
+        <li><a href="#" class="nav-link-item active">Pelatih</a></li>
+        <li><a href="#" class="nav-link-item">Galeri</a></li>
+        <li><a href="#" class="nav-link-item">Lokasi</a></li>
+        <li><a href="#" class="nav-link-item">Berita</a></li>
+      </ul>
+      <button class="nav-auth-btn">Masuk Portal</button>
+    </div>
+
+    <div class="landing-content">
+      <div class="section-title-area">
+        <h1 class="section-main-title">PELATIH & INSTRUKTUR KAMI</h1>
+        <p class="section-subtitle">Dipandu langsung oleh para profesional berpengalaman dan berlisensi resmi olahraga bola basket.</p>
+      </div>
+
+      <div class="wire-grid-2" style="flex: 1; align-items: stretch;">
+        <div class="coach-card">
+          <div class="image-placeholder coach-image-wrapper">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="image-placeholder-label">Foto Coach Pep Guardiola</span>
+          </div>
+          <div class="coach-info-wrapper">
+            <div>
+              <h3 class="coach-name">Coach Pep Guardiola</h3>
+              <p class="coach-role">Head Coach (Pelatih Kepala)</p>
+            </div>
+            <div style="border-top: 1px dashed #e5e7eb; padding-top: 10px;">
+              <ul class="coach-exp-list">
+                <li class="coach-exp-item">• Pelatih Kepala Tim Utama Wirabhakti</li>
+                <li class="coach-exp-item">• Sertifikasi Pelatih Lisensi A Nasional Kemenpora</li>
+                <li class="coach-exp-item">• Mantan Pemain Profesional Liga Basket Utama NBL Indonesia</li>
+                <li class="coach-exp-item">• Spesialisasi Pengembangan Karakter & Fisik Atlet Muda</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="coach-card">
+          <div class="image-placeholder coach-image-wrapper">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="image-placeholder-label">Foto Coach Xabi Alonso</span>
+          </div>
+          <div class="coach-info-wrapper">
+            <div>
+              <h3 class="coach-name">Coach Xabi Alonso</h3>
+              <p class="coach-role">Technical Coach (Spesialis Fundamental)</p>
+            </div>
+            <div style="border-top: 1px dashed #e5e7eb; padding-top: 10px;">
+              <ul class="coach-exp-list">
+                <li class="coach-exp-item">• Pelatih Spesialis Fundamental & Teknik Menembak (Shooting)</li>
+                <li class="coach-exp-item">• Berpengalaman melatih 8+ tahun di berbagai klub lokal Jawa Timur</li>
+                <li class="coach-exp-item">• Fokus pada Technical Skill Development & Ball Handling</li>
+                <li class="coach-exp-item">• Lulusan Kepelatihan Olahraga Universitas Negeri</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-footer">
+      <div class="footer-left">
+        <strong>Wirabhakti Basket Akademi © 2026</strong>. Semua hak cipta dilindungi.
+      </div>
+      <div class="footer-right">
+        <a href="#" class="footer-link">Kebijakan Privasi</a>
+        <a href="#" class="footer-link">Syarat & Ketentuan</a>
+        <a href="#" class="footer-link">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HALAMAN 4: GALLERY (GALERI FOTO) - #landing-gallery
+       ========================================================================= -->
+  <div class="wire-canvas" id="landing-gallery">
+    <div class="landing-header">
+      <div class="brand-container">
+        <div class="brand-logo-box">W</div>
+        <div class="brand-name">Wirabhakti Academy</div>
+      </div>
+      <ul class="nav-links-list">
+        <li><a href="#" class="nav-link-item">Beranda</a></li>
+        <li><a href="#" class="nav-link-item">Program</a></li>
+        <li><a href="#" class="nav-link-item">Pelatih</a></li>
+        <li><a href="#" class="nav-link-item active">Galeri</a></li>
+        <li><a href="#" class="nav-link-item">Lokasi</a></li>
+        <li><a href="#" class="nav-link-item">Berita</a></li>
+      </ul>
+      <button class="nav-auth-btn">Masuk Portal</button>
+    </div>
+
+    <div class="landing-content">
+      <div class="section-title-area">
+        <h1 class="section-main-title">GALERI MOMEN WIRABHAKTI</h1>
+        <p class="section-subtitle">Potret dedikasi, semangat juang, dan kebersamaan para atlet dalam proses latihan serta kompetisi.</p>
+      </div>
+
+      <div class="gallery-filter-tabs">
+        <button class="gallery-tab active">Semua Momen</button>
+        <button class="gallery-tab">Latihan Rutin</button>
+        <button class="gallery-tab">Turnamen & Laga</button>
+        <button class="gallery-tab">Kegiatan Evaluasi</button>
+        <button class="gallery-tab">Event Sosial</button>
+      </div>
+
+      <div class="wire-grid-3" style="flex: 1;">
+        <div class="gallery-item-card">
+          <div class="image-placeholder gallery-item-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge">Latihan</span>
+            <span class="gallery-badge-top-right">12 Foto</span>
+          </div>
+          <div class="gallery-item-info">
+            <div class="gallery-item-date">15 JUNI 2026</div>
+            <h4 class="gallery-item-title">Latihan Fundamental KU-12</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item-card">
+          <div class="image-placeholder gallery-item-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge">Turnamen</span>
+            <span class="gallery-badge-top-right">24 Foto</span>
+          </div>
+          <div class="gallery-item-info">
+            <div class="gallery-item-date">10 JUNI 2026</div>
+            <h4 class="gallery-item-title">Kejuaraan Lumajang Cup 2026</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item-card">
+          <div class="image-placeholder gallery-item-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge">Evaluasi</span>
+            <span class="gallery-badge-top-right">8 Foto</span>
+          </div>
+          <div class="gallery-item-info">
+            <div class="gallery-item-date">01 JUNI 2026</div>
+            <h4 class="gallery-item-title">Tes Fisik FUT Card Bulanan</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item-card">
+          <div class="image-placeholder gallery-item-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge">Turnamen</span>
+            <span class="gallery-badge-top-right">16 Foto</span>
+          </div>
+          <div class="gallery-item-info">
+            <div class="gallery-item-date">25 MEI 2026</div>
+            <h4 class="gallery-item-title">Friendly Match Orang Tua & Anak</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item-card">
+          <div class="image-placeholder gallery-item-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge">Latihan</span>
+            <span class="gallery-badge-top-right">20 Foto</span>
+          </div>
+          <div class="gallery-item-info">
+            <div class="gallery-item-date">18 MEI 2026</div>
+            <h4 class="gallery-item-title">Gabungan Sesi Taktik KU-18</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item-card">
+          <div class="image-placeholder gallery-item-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge">Sosial</span>
+            <span class="gallery-badge-top-right">10 Foto</span>
+          </div>
+          <div class="gallery-item-info">
+            <div class="gallery-item-date">05 MEI 2026</div>
+            <h4 class="gallery-item-title">Kegiatan Berbagi & Bakti Sosial</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-footer">
+      <div class="footer-left">
+        <strong>Wirabhakti Basket Akademi © 2026</strong>. Semua hak cipta dilindungi.
+      </div>
+      <div class="footer-right">
+        <a href="#" class="footer-link">Kebijakan Privasi</a>
+        <a href="#" class="footer-link">Syarat & Ketentuan</a>
+        <a href="#" class="footer-link">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HALAMAN 5: LOCATION (LOKASI & KONTAK) - #landing-location
+       ========================================================================= -->
+  <div class="wire-canvas" id="landing-location">
+    <div class="landing-header">
+      <div class="brand-container">
+        <div class="brand-logo-box">W</div>
+        <div class="brand-name">Wirabhakti Academy</div>
+      </div>
+      <ul class="nav-links-list">
+        <li><a href="#" class="nav-link-item">Beranda</a></li>
+        <li><a href="#" class="nav-link-item">Program</a></li>
+        <li><a href="#" class="nav-link-item">Pelatih</a></li>
+        <li><a href="#" class="nav-link-item">Galeri</a></li>
+        <li><a href="#" class="nav-link-item active">Lokasi</a></li>
+        <li><a href="#" class="nav-link-item">Berita</a></li>
+      </ul>
+      <button class="nav-auth-btn">Masuk Portal</button>
+    </div>
+
+    <div class="landing-content">
+      <div class="section-title-area">
+        <h1 class="section-main-title">LOKASI ARENA & HUBUNGI KAMI</h1>
+        <p class="section-subtitle">Pusat pelatihan kami berlokasi strategis di GOR Wirabhakti Lumajang dengan fasilitas lapangan standar pertandingan.</p>
+      </div>
+
+      <div class="wire-grid-2" style="flex: 1; align-items: stretch; margin-top: 10px;">
+        <div class="location-box">
+          <h2 class="program-card-title" style="font-size: 1.15rem; border-bottom: 1px dashed #d1d5db; padding-bottom: 8px;">Informasi Kontak & Jam</h2>
+          
+          <div class="location-info-item">
+            <div class="location-icon-placeholder">📍</div>
+            <div class="location-info-content">
+              <strong>Alamat GOR Arena</strong>
+              Jl. Brigjen Slamet Riyadi Lumajang, Tompokersan, Kec. Lumajang, Kabupaten Lumajang, Jawa Timur 67311
+            </div>
+          </div>
+
+          <div class="location-info-item">
+            <div class="location-icon-placeholder">📞</div>
+            <div class="location-info-content">
+              <strong>Nomor Telepon & WhatsApp</strong>
+              +62 812 3456 7890 (Customer Service)
+            </div>
+          </div>
+
+          <div class="location-info-item">
+            <div class="location-icon-placeholder">✉️</div>
+            <div class="location-info-content">
+              <strong>E-mail Resmi</strong>
+              info@wirabhakti.my.id
+            </div>
+          </div>
+
+          <div class="location-info-item">
+            <div class="location-icon-placeholder">⏰</div>
+            <div class="location-info-content">
+              <strong>Jam Operasional Kantor & Latihan</strong>
+              Senin - Sabtu: 08.00 s.d 21.00 WIB<br>
+              Minggu: Libur (Kecuali Event Pertandingan Khusus)
+            </div>
+          </div>
+
+          <button class="wire-btn" style="margin-top: auto; font-size: 0.75rem;">Petunjuk Arah Google Maps</button>
+        </div>
+
+        <div class="image-placeholder map-placeholder">
+          <svg width="100%" height="100%">
+            <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+          </svg>
+          <span class="image-placeholder-label" style="text-align: center; max-width: 80%;">GOOGLE MAPS EMBED SIMULATOR<br><span style="font-size: 0.6rem; color: #a1a1a1; font-weight: normal;">Pin: Gelora Wira Bhakti Lumajang</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-footer">
+      <div class="footer-left">
+        <strong>Wirabhakti Basket Akademi © 2026</strong>. Semua hak cipta dilindungi.
+      </div>
+      <div class="footer-right">
+        <a href="#" class="footer-link">Kebijakan Privasi</a>
+        <a href="#" class="footer-link">Syarat & Ketentuan</a>
+        <a href="#" class="footer-link">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HALAMAN 6: NEWS (BERITA & ARTIKEL) - #landing-news
+       ========================================================================= -->
+  <div class="wire-canvas" id="landing-news">
+    <div class="landing-header">
+      <div class="brand-container">
+        <div class="brand-logo-box">W</div>
+        <div class="brand-name">Wirabhakti Academy</div>
+      </div>
+      <ul class="nav-links-list">
+        <li><a href="#" class="nav-link-item">Beranda</a></li>
+        <li><a href="#" class="nav-link-item">Program</a></li>
+        <li><a href="#" class="nav-link-item">Pelatih</a></li>
+        <li><a href="#" class="nav-link-item">Galeri</a></li>
+        <li><a href="#" class="nav-link-item">Lokasi</a></li>
+        <li><a href="#" class="nav-link-item active">Berita</a></li>
+      </ul>
+      <button class="nav-auth-btn">Masuk Portal</button>
+    </div>
+
+    <div class="landing-content">
+      <div class="section-title-area" style="margin-bottom: 5px;">
+        <h1 class="section-main-title">BERITA & PENGUMUMAN WIRABHAKTI</h1>
+        <p class="section-subtitle">Dapatkan berita dan pengumuman terbaru seputar aktivitas, tips basket, dan prestasi akademi kami.</p>
+      </div>
+
+      <div class="featured-news-card">
+        <div class="image-placeholder featured-news-img">
+          <svg width="100%" height="100%">
+            <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+          </svg>
+          <span class="image-placeholder-label">Foto Berita Utama</span>
+        </div>
+        <div class="featured-news-content">
+          <div class="featured-news-header">
+            <span class="wire-badge">Pengumuman</span>
+            <span class="featured-news-date">22 Juni 2026</span>
+          </div>
+          <h3 class="featured-news-title">PENDAFTARAN KELAS BARU JUNIOR STARTER KU-12 RESMI DIBUKA</h3>
+          <p class="featured-news-desc">
+            Wirabhakti Basket Akademi membuka pendaftaran kelas fundamental baru untuk kelompok usia 6-12 tahun. 
+            Sesi latihan akhir pekan ini dirancang khusus oleh pelatih spesialis untuk mengembangkan motorik dasar, 
+            fokus hand-eye coordination, serta fundamental dribbling & shooting anak. Segera daftar sebelum kuota penuh!
+          </p>
+          <button class="wire-btn-outline" style="width: fit-content; font-size: 0.7rem; padding: 6px 12px; margin-top: 4px;">Baca Selengkapnya</button>
+        </div>
+      </div>
+
+      <div class="wire-grid-3" style="flex: 1;">
+        <div class="news-grid-item">
+          <div class="image-placeholder news-grid-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge" style="top: 8px; left: 8px;">Prestasi</span>
+          </div>
+          <div class="news-grid-info">
+            <div class="featured-news-date">15 JUNI 2026</div>
+            <h4 class="news-grid-title">Wirabhakti KU-18 Juara Lumajang Cup</h4>
+            <p class="news-grid-desc">Tim KU-18 berhasil menyabet gelar juara pertama setelah menang tipis di laga final sengit kemarin sore...</p>
+          </div>
+        </div>
+
+        <div class="news-grid-item">
+          <div class="image-placeholder news-grid-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge" style="top: 8px; left: 8px;">Tips Latihan</span>
+          </div>
+          <div class="news-grid-info">
+            <div class="featured-news-date">10 JUNI 2026</div>
+            <h4 class="news-grid-title">5 Latihan Dasar Dribbling Mandiri</h4>
+            <p class="news-grid-desc">Coach Xabi Alonso membagikan tips menu latihan dribble di rumah tanpa merusak perabotan dengan tips ini...</p>
+          </div>
+        </div>
+
+        <div class="news-grid-item">
+          <div class="image-placeholder news-grid-img">
+            <svg width="100%" height="100%">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="#d1d5db" stroke-width="2" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="#d1d5db" stroke-width="2" />
+            </svg>
+            <span class="gallery-badge-top-left wire-badge" style="top: 8px; left: 8px;">Jadwal</span>
+          </div>
+          <div class="news-grid-info">
+            <div class="featured-news-date">05 JUNI 2026</div>
+            <h4 class="news-grid-title">Libur Latihan & Penyesuaian Idul Adha</h4>
+            <p class="news-grid-desc">Pengumuman penyesuaian jadwal latihan akademi menyambut libur bersama hari raya kurban bulan ini...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-footer">
+      <div class="footer-left">
+        <strong>Wirabhakti Basket Akademi © 2026</strong>. Semua hak cipta dilindungi.
+      </div>
+      <div class="footer-right">
+        <a href="#" class="footer-link">Kebijakan Privasi</a>
+        <a href="#" class="footer-link">Syarat & Ketentuan</a>
+        <a href="#" class="footer-link">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
