@@ -9,10 +9,12 @@ import NewsImage from "@/src/components/news/NewsImage";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005";
 
+export const dynamic = "force-dynamic";
+
 async function getStats() {
   let activeStudents = 74;
   let proCoaches = 3;
-  let trophiesCount = 20;
+  let trophiesCount = 24;
 
   // 1. Fetch Students count
   try {
