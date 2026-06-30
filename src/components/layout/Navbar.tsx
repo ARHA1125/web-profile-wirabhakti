@@ -126,7 +126,7 @@ export default function Navbar() {
           </button>
           <div className={`overflow-hidden transition-all duration-300 ${isMobileSubOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}>
             <div className="flex flex-col items-center gap-1 pb-2">
-              <Link href="#partners" onClick={() => setIsMobileOpen(false)} className="text-white/70 font-bold text-sm uppercase tracking-wider py-2 hover:text-dbl-orange transition-colors">Partners</Link>
+              <Link href="/#partners" onClick={() => setIsMobileOpen(false)} className="text-white/70 font-bold text-sm uppercase tracking-wider py-2 hover:text-dbl-orange transition-colors">Partners</Link>
               <Link href="/coach" onClick={() => setIsMobileOpen(false)} className="text-white/70 font-bold text-sm uppercase tracking-wider py-2 hover:text-dbl-orange transition-colors">Our Coach</Link>
               <Link href="/location" onClick={() => setIsMobileOpen(false)} className="text-white/70 font-bold text-sm uppercase tracking-wider py-2 hover:text-dbl-orange transition-colors">Location</Link>
               <Link href="/" onClick={() => setIsMobileOpen(false)} className="text-white/70 font-bold text-sm uppercase tracking-wider py-2 hover:text-dbl-orange transition-colors">Contact</Link>
