@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-[80vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[80vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-secondary">
       {/* Background Image menggunakan Next.js Image untuk optimasi */}
       <div className="absolute inset-0 z-0">
         <Image 

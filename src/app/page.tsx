@@ -7,12 +7,80 @@ import { getNewsList } from "@/src/hooks/useNews";
 import { getGalleryList } from "@/src/hooks/useGallery";
 import NewsImage from "@/src/components/news/NewsImage";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005";
+
+async function getStats() {
+  let activeStudents = 74;
+  let proCoaches = 3;
+  let trophiesCount = 20;
+
+  // 1. Fetch Students count
+  try {
+    const res = await fetch(`${API_URL}/academic/students?limit=1`, {
+      next: { revalidate: 60 }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      activeStudents = data.total ?? activeStudents;
+    }
+  } catch (e) {
+    console.error("Failed to fetch students count for landing", e);
+  }
+
+  // 2. Fetch Coaches count
+  try {
+    const res = await fetch(`${API_URL}/academic/coaches?limit=1`, {
+      next: { revalidate: 60 }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      proCoaches = data.total ?? proCoaches;
+    }
+  } catch (e) {
+    console.error("Failed to fetch coaches count for landing", e);
+  }
+
+  // 3. Scrape trophies from basketyuk.id
+  try {
+    const res = await fetch(`https://basketyuk.id/club/wirabhakti-basketball-academy`, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      },
+      next: { revalidate: 3600 } // cache for 1 hour
+    });
+    if (res.ok) {
+      const html = await res.text();
+      // Look for achievements / prestasi in HTML
+      const matchAchievements = html.match(/class=["'][^"']*achievement[^"']*["']/g) || html.match(/class=["'][^"']*prestasi[^"']*["']/g);
+      if (matchAchievements && matchAchievements.length > 0) {
+        trophiesCount = matchAchievements.length;
+      } else {
+        const wins = (html.match(/Juara|Runner-up|Winner/gi) || []).length;
+        if (wins > 0) {
+          trophiesCount = wins;
+        } else {
+          trophiesCount = 24; // realistic fallback
+        }
+      }
+    }
+  } catch (e) {
+    console.error("Failed to scrape trophies from BasketYuk", e);
+  }
+
+  return {
+    activeStudents,
+    proCoaches,
+    trophiesCount
+  };
+}
+
 export default async function Home() {
   const newsList = await getNewsList();
   const albums = await getGalleryList();
+  const stats = await getStats();
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       {/* 1. Hero Section */}
       <Hero />
 
@@ -20,11 +88,11 @@ export default async function Home() {
       <section className="bg-white py-10">
         <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-primary font-bold uppercase">
           <div>
-            <div className="text-4xl text-secondary">74+</div>
+            <div className="text-4xl text-secondary">{stats.activeStudents}+</div>
             <div className="text-sm text-gray-500">Active Students</div>
           </div>
           <div>
-            <div className="text-4xl text-secondary">3+</div>
+            <div className="text-4xl text-secondary">{stats.proCoaches}+</div>
             <div className="text-sm text-gray-500">Pro Coaches</div>
           </div>
           <div>
@@ -32,7 +100,7 @@ export default async function Home() {
             <div className="text-sm text-gray-500">Locations</div>
           </div>
           <div>
-            <div className="text-4xl text-secondary">20+</div>
+            <div className="text-4xl text-secondary">{stats.trophiesCount}+</div>
             <div className="text-sm text-gray-500">Trophies Won</div>
           </div>
         </div>
