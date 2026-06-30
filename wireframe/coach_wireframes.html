@@ -457,6 +457,220 @@
       transform: translateX(-50%);
       cursor: pointer;
     }
+
+    /* Trend Badges (Grayscale Blueprint) */
+    .trend-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin-left: 6px;
+      border: 1px solid #4b5563;
+      background-color: #f3f4f6;
+    }
+
+    .trend-up {
+      border-color: #4b5563;
+      color: #111827;
+    }
+
+    .trend-down {
+      border-color: #9ca3af;
+      color: #6b7280;
+    }
+
+    .trend-warn {
+      border-color: #374151;
+      color: #111827;
+      background-color: #e5e7eb;
+    }
+
+    /* Action Required Widget */
+    .action-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .action-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border: 1px dashed #4b5563;
+      border-radius: 6px;
+      background-color: #f9fafb;
+    }
+
+    .action-item-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .action-indicator {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #4b5563;
+    }
+
+    .action-indicator.empty {
+      background-color: transparent;
+      border: 1px solid #4b5563;
+    }
+
+    .action-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .action-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .action-meta {
+      font-size: 0.65rem;
+      color: #6b7280;
+    }
+
+    .action-btn {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      border: 1px solid #4b5563;
+      padding: 4px 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Absensi List (Grayscale Blueprint) */
+    .absensi-row-rich {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border: 1px dashed #9ca3af;
+      border-radius: 6px;
+      background-color: #f9fafb;
+      font-size: 0.75rem;
+      width: 100%;
+    }
+
+    /* Upcoming Events Widget (Grayscale Blueprint) */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .event-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .event-date-box {
+      width: 50px;
+      height: 50px;
+      border: 1px dashed #4b5563;
+      border-radius: 6px;
+      background-color: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .event-date-day {
+      font-size: 0.65rem;
+      color: #6b7280;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .event-date-num {
+      font-size: 0.95rem;
+      color: #111827;
+      font-weight: 800;
+    }
+
+    .event-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .event-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .event-meta {
+      font-size: 0.65rem;
+      color: #6b7280;
+    }
+
+    /* Leaderboard Items (Grayscale Blueprint) */
+    .leaderboard-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .leaderboard-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #e5e7eb;
+      padding-bottom: 4px;
+      font-size: 0.7rem;
+      color: #4b5563;
+    }
+
+    .leaderboard-item strong {
+      color: #111827;
+    }
+
+    /* FUT Stats Slider (Grayscale Blueprint) */
+    .grading-stat-slider {
+      margin-bottom: 8px;
+      width: 100%;
+    }
+
+    .grading-stat-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: #4b5563;
+      margin-bottom: 2px;
+    }
+
+    .grading-stat-track {
+      height: 6px;
+      background-color: #e5e7eb;
+      border-radius: 3px;
+      position: relative;
+      border: 1px dashed #9ca3af;
+    }
+
+    .grading-stat-fill {
+      height: 100%;
+      background-color: #4b5563;
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
@@ -467,15 +681,23 @@
   <div class="wire-canvas" id="coach-dashboard-overview">
     <div class="sidebar">
       <div class="brand-section">
-        <div class="brand-logo-container">
-          <div class="brand-logo-placeholder">W</div>
-          <div class="brand-title">WIRABHAKTI</div>
+        <div class="brand-logo-container" style="margin-bottom: 12px;">
+          <div class="brand-logo-placeholder" style="background-color: #f3f4f6; font-weight: 800; border-style: solid;">W</div>
+          <div class="brand-title" style="line-height: 1.1;">
+            <span>WIRABHAKTI</span>
+            <span style="font-size: 0.55rem; font-weight: 600; color: #9ca3af; display: block; letter-spacing: 0.02em;">BASKETBALL CLUB</span>
+          </div>
         </div>
       </div>
+      
+      <div style="position: relative; margin-bottom: 16px;">
+        <input type="text" placeholder="Search items..." class="wire-input" style="padding: 4px 8px; font-size: 0.75rem;" />
+      </div>
+
       <div>
         <div class="menu-group-title">Coach Menu</div>
         <ul class="menu-list">
-          <li class="menu-item active"><div class="menu-icon-box"></div> Dashboard Utama</li>
+          <li class="menu-item active"><div class="menu-icon-box"></div> Home</li>
           <li class="menu-item"><div class="menu-icon-box"></div> Silabus Latihan</li>
           <li class="menu-item"><div class="menu-icon-box"></div> Absensi Kelas</li>
           <li class="menu-item"><div class="menu-icon-box"></div> Penilaian Atlet</li>
@@ -487,80 +709,220 @@
     </div>
 
     <div class="main-viewport">
-      <div class="navbar">
-        <div class="navbar-breadcrumbs">Coach &gt; Dashboard Overview</div>
+      <div class="navbar" style="justify-content: space-between; align-items: center; padding: 0 24px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.15rem; font-weight: 800; color: #111827;">Coach Dashboard Overview</span>
+            <span style="font-size: 0.6rem; font-weight: 700; padding: 1px 6px; background-color: #f3f4f6; border: 1px solid #4b5563; color: #4b5563; border-radius: 20px; text-transform: uppercase;">v2.1 Live</span>
+          </div>
+          <span style="font-size: 0.7rem; color: #6b7280; font-weight: 500;">Selamat pagi Coach, kelola absensi, jadwal latihan, dan progres nilai atlet hari ini.</span>
+        </div>
+        <div style="font-size: 0.75rem; display: flex; align-items: center; gap: 8px; color: #1f2937;">
+          <span>Pilih Kelas:</span>
+          <select style="background:#ffffff; color:#1f2937; border: 1px dashed #4b5563; padding: 4px 8px; font-size:0.72rem; border-radius:4px; font-family:'Inter'; outline:none;">
+            <option>KU-16 A (Kelompok Umur 16)</option>
+            <option>KU-12 B (Kelompok Umur 12)</option>
+            <option>KU-10 A (Kelompok Umur 10)</option>
+          </select>
+        </div>
       </div>
-      <div class="workspace-body">
-        <div class="page-header">
-          <h1 class="page-title">Selamat Datang, Coach Hermawan</h1>
-          <p class="page-subtitle">Kelola jadwal latihan, absensi kelas, dan statistik nilai FUT Card atlet Anda.</p>
+
+      <div class="workspace-body" style="padding: 20px; display: flex; flex-direction: column; gap: 20px;">
+        <!-- Row 1: Quick Stats -->
+        <div class="wire-grid-3" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+          <div class="wire-card" style="padding: 12px 16px;">
+            <div class="wire-card-title" style="margin-bottom: 4px;">Kelas Diampu</div>
+            <div class="wire-card-stat-val" style="font-size: 1.35rem; margin: 2px 0;">3 Kelas</div>
+            <div class="wire-card-footer-text" style="font-size: 0.65rem;">KU-10, KU-12, KU-16</div>
+          </div>
+          <div class="wire-card" style="padding: 12px 16px;">
+            <div class="wire-card-title" style="margin-bottom: 4px;">Siswa Roster</div>
+            <div class="wire-card-stat-val" style="font-size: 1.35rem; margin: 2px 0;">45 Atlet</div>
+            <span class="trend-badge trend-up" style="margin: 0; width: fit-content;">▲ +5 Roster</span>
+          </div>
+          <div class="wire-card" style="padding: 12px 16px;">
+            <div class="wire-card-title" style="margin-bottom: 4px;">Kehadiran Latihan</div>
+            <div class="wire-card-stat-val" style="font-size: 1.35rem; margin: 2px 0;">92.1%</div>
+            <span class="trend-badge trend-up" style="margin: 0; width: fit-content;">▲ +1.5%</span>
+          </div>
+          <div class="wire-card" style="padding: 12px 16px;">
+            <div class="wire-card-title" style="margin-bottom: 4px;">Sesi Pekan Ini</div>
+            <div class="wire-card-stat-val" style="font-size: 1.35rem; margin: 2px 0;">8 Sesi</div>
+            <div class="wire-card-footer-text" style="font-size: 0.65rem;">4 Selesai • 4 Jadwal</div>
+          </div>
         </div>
 
-        <div class="wire-grid-3">
-          <div class="wire-card">
-            <div class="wire-card-title">Kelas Diampu</div>
-            <div class="wire-card-stat-val">2 Kelas</div>
-            <div class="wire-card-footer-text">KU-10 A &amp; KU-12 A</div>
-          </div>
-          <div class="wire-card">
-            <div class="wire-card-title">Total Anak Didik</div>
-            <div class="wire-card-stat-val">53 Siswa</div>
-            <div class="wire-card-footer-text">25 (KU-10) + 28 (KU-12)</div>
-          </div>
-          <div class="wire-card">
-            <div class="wire-card-title">Draft Penilaian Pending</div>
-            <div class="wire-card-stat-val" style="color:#f59e0b;">5 Draft</div>
-            <div class="wire-card-footer-text">Memerlukan review dan audit admin</div>
-          </div>
-        </div>
-
-        <div class="wire-grid-2-1">
-          <!-- Recent activity/schedule -->
-          <div class="wire-card" style="justify-content: flex-start; gap: 12px;">
-            <div class="wire-card-title">Jadwal Sesi Latihan Terdekat</div>
-            <table class="wire-table">
-              <thead>
-                <tr>
-                  <th>Kelas</th>
-                  <th>Hari / Jam</th>
-                  <th>Materi Silabus</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>KU-10 A</strong></td>
-                  <td>Sabtu, 08:00</td>
-                  <td>Body Control &amp; Footwork</td>
-                  <td><button class="wire-btn" style="padding:4px 8px; font-size:0.7rem;">Absen Sekarang</button></td>
-                </tr>
-                <tr>
-                  <td><strong>KU-12 A</strong></td>
-                  <td>Sabtu, 10:00</td>
-                  <td>Advanced Dribble &amp; Drive</td>
-                  <td><button class="wire-btn-outline" style="padding:4px 8px; font-size:0.7rem;">Mulai Sesi</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Quick stat analysis -->
-          <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
-            <div class="wire-card-title">Rata-rata OVR Kelas</div>
-            <div style="display:flex; flex-direction:column; gap:12px; margin-top:5px;">
-              <div>
-                <div style="display:flex; justify-content:space-between; font-size:0.7rem; font-weight:600;">
-                  <span>KU-10 A (Rata-rata OVR)</span>
-                  <span>OVR: 78</span>
-                </div>
-                <div class="wire-progress"><div class="wire-progress-fill" style="width: 78%;"></div></div>
+        <!-- Row 2: Grid Split -->
+        <div class="wire-grid-2-1" style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px;">
+          <!-- Left Column (Actions & Last Attendance) -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <!-- Action Required -->
+            <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #e5e7eb; padding-bottom: 6px; width: 100%;">
+                <span class="wire-card-title" style="margin-bottom: 0;">⚠️ Action Required</span>
+                <span class="wire-badge" style="font-size: 0.6rem; padding: 1px 6px;">3 Pending</span>
               </div>
-              <div>
-                <div style="display:flex; justify-content:space-between; font-size:0.7rem; font-weight:600;">
-                  <span>KU-12 A (Rata-rata OVR)</span>
-                  <span>OVR: 81</span>
+              <div class="action-list">
+                <div class="action-item">
+                  <div class="action-item-left">
+                    <div class="action-indicator"></div>
+                    <div class="action-info">
+                      <span class="action-title">Verifikasi Absensi Kelas KU-16</span>
+                      <span class="action-meta">Absensi • 10m ago</span>
+                    </div>
+                  </div>
+                  <button class="action-btn">Process</button>
                 </div>
-                <div class="wire-progress"><div class="wire-progress-fill" style="width: 81%;"></div></div>
+                <div class="action-item">
+                  <div class="action-item-left">
+                    <div class="action-indicator"></div>
+                    <div class="action-info">
+                      <span class="action-title">Input Nilai FUT Card Dimas Anggara</span>
+                      <span class="action-meta">Penilaian • 2h ago</span>
+                    </div>
+                  </div>
+                  <button class="action-btn">Process</button>
+                </div>
+                <div class="action-item">
+                  <div class="action-item-left">
+                    <div class="action-indicator empty"></div>
+                    <div class="action-info">
+                      <span class="action-title">Review Silabus Latihan Pekan 5</span>
+                      <span class="action-meta">Silabus • 1d ago</span>
+                    </div>
+                  </div>
+                  <button class="action-btn">Process</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Absensi Sesi Terakhir -->
+            <div class="wire-card" style="justify-content: flex-start; gap: 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #e5e7eb; padding-bottom: 6px; width: 100%;">
+                <span class="wire-card-title" style="margin-bottom: 0;">⚡ Absensi Sesi Terakhir</span>
+                <span style="font-size: 0.65rem; color: #6b7280;">KU-16 A - Latihan Fisik</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 6px; width: 100%;">
+                <div class="absensi-row-rich">
+                  <span>Budi Santoso</span>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:0.65rem; color:#10b981; font-weight: 600;">Hadir</span>
+                    <div class="absensi-toggle active"></div>
+                  </div>
+                </div>
+                <div class="absensi-row-rich">
+                  <span>Billy Pratama</span>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:0.65rem; color:#10b981; font-weight: 600;">Hadir</span>
+                    <div class="absensi-toggle active"></div>
+                  </div>
+                </div>
+                <div class="absensi-row-rich">
+                  <span>Clara Sinta</span>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:0.65rem; color:#10b981; font-weight: 600;">Hadir</span>
+                    <div class="absensi-toggle active"></div>
+                  </div>
+                </div>
+                <div class="absensi-row-rich">
+                  <span>Diki Wahyudi</span>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:0.65rem; color:#6b7280;">Absen</span>
+                    <div class="absensi-toggle"></div>
+                  </div>
+                </div>
+              </div>
+              <button class="wire-btn" style="width: 100%; font-size: 0.75rem; padding: 6px; margin-top: 4px;">Simpan &amp; Kirim Laporan Kehadiran</button>
+            </div>
+          </div>
+
+          <!-- Right Column (Upcoming Schedule, Leaderboard, Team FUT Stats) -->
+          <div style="display: flex; flex-direction: column; gap: 15px;">
+            <!-- Upcoming Schedule & Leaderboard Row -->
+            <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 15px;">
+              <!-- Upcoming Schedule -->
+              <div class="wire-card" style="justify-content: flex-start; gap: 8px; padding: 12px;">
+                <div class="wire-card-title" style="border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px; width: 100%;">📅 Upcoming Schedule</div>
+                <div class="event-list" style="gap: 8px;">
+                  <div class="event-item">
+                    <div class="event-date-box">
+                      <span class="event-date-day">Sel</span>
+                      <span class="event-date-num">31</span>
+                    </div>
+                    <div class="event-details">
+                      <span class="event-title" style="font-size: 0.7rem;">KU-16 Tactical Session</span>
+                      <span class="event-meta" style="font-size: 0.6rem;">GOR Wirabhakti • 16:00 WIB</span>
+                    </div>
+                  </div>
+                  <div class="event-item">
+                    <div class="event-date-box" style="border-color:#d1d5db;">
+                      <span class="event-date-day">Kam</span>
+                      <span class="event-date-num">02</span>
+                    </div>
+                    <div class="event-details">
+                      <span class="event-title" style="font-size: 0.7rem;">KU-12 Shooting Drill</span>
+                      <span class="event-meta" style="font-size: 0.6rem;">GOR Wirabhakti • 16:00 WIB</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="wire-btn-outline" style="font-size: 0.65rem; padding: 4px; width: 100%; margin-top: 6px;">Buka Kalender Latihan</button>
+              </div>
+
+              <!-- Leaderboard -->
+              <div class="wire-card" style="justify-content: flex-start; gap: 8px; padding: 12px;">
+                <div class="wire-card-title" style="border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px; width: 100%;">🏆 Top Performers</div>
+                <div class="leaderboard-list">
+                  <div class="leaderboard-item">
+                    <span>1st Dimas A.</span>
+                    <strong>+150 XP</strong>
+                  </div>
+                  <div class="leaderboard-item">
+                    <span>2nd Kevin S.</span>
+                    <strong>+120 XP</strong>
+                  </div>
+                  <div class="leaderboard-item">
+                    <span>3rd Raka A.</span>
+                    <strong>+110 XP</strong>
+                  </div>
+                </div>
+                <div style="text-align: center; margin-top: auto;">
+                  <a href="#" style="font-size: 0.65rem; color: #4b5563; text-decoration: none; font-weight: 600;">Peringkat Lengkap &gt;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team FUT Stats Average (KU-16 A) -->
+            <div class="wire-card" style="justify-content: flex-start; gap: 8px; padding: 12px 16px;">
+              <div class="wire-card-title" style="border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px; width: 100%;">📊 Team Stats Average (KU-16 A)</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; width: 100%;">
+                <div class="grading-stat-slider">
+                  <div class="grading-stat-info"><span>Speed (SPD)</span><strong>85</strong></div>
+                  <div class="grading-stat-track"><div class="grading-stat-fill" style="width:85%;"></div></div>
+                </div>
+                <div class="grading-stat-slider">
+                  <div class="grading-stat-info"><span>Shooting (SHO)</span><strong>78</strong></div>
+                  <div class="grading-stat-track"><div class="grading-stat-fill" style="width:78%;"></div></div>
+                </div>
+                <div class="grading-stat-slider">
+                  <div class="grading-stat-info"><span>Passing (PAS)</span><strong>80</strong></div>
+                  <div class="grading-stat-track"><div class="grading-stat-fill" style="width:80%;"></div></div>
+                </div>
+                <div class="grading-stat-slider">
+                  <div class="grading-stat-info"><span>Dribbling (DRI)</span><strong>82</strong></div>
+                  <div class="grading-stat-track"><div class="grading-stat-fill" style="width:82%;"></div></div>
+                </div>
+                <div class="grading-stat-slider">
+                  <div class="grading-stat-info"><span>Defense (DEF)</span><strong>75</strong></div>
+                  <div class="grading-stat-track"><div class="grading-stat-fill" style="width:75%;"></div></div>
+                </div>
+                <div class="grading-stat-slider">
+                  <div class="grading-stat-info"><span>Physical (PHY)</span><strong>76</strong></div>
+                  <div class="grading-stat-track"><div class="grading-stat-fill" style="width:76%;"></div></div>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#f3f4f6; border:1px dashed #4b5563; padding:4px 8px; border-radius:4px; margin-top:4px; width: 100%;">
+                <span style="font-size:0.65rem; color:#4b5563; font-weight:600;">Team Average OVR:</span>
+                <strong style="font-size:1rem; color:#111827;">79</strong>
               </div>
             </div>
           </div>
