@@ -373,7 +373,7 @@ export default async function Home() {
                   parentPhoto: null,
                 }
               ];
-              const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
+              const displayTestimonials = (testimonials.length > 0 ? testimonials : fallbackTestimonials).slice(0, 6);
               
               return displayTestimonials.map((t) => (
                 <div key={t.id} className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group">
@@ -394,7 +394,7 @@ export default async function Home() {
 
                     {/* Content */}
                     <p className="text-gray-600 font-montserrat text-sm leading-relaxed italic">
-                      "{t.content}"
+                      &ldquo;{t.content}&rdquo;
                     </p>
                   </div>
 
