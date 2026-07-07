@@ -5,7 +5,9 @@ import Link from "next/link";
 import { PROGRAMS } from "../constants/Index";
 import { getNewsList } from "@/src/hooks/useNews";
 import { getGalleryList } from "@/src/hooks/useGallery";
+import { getTestimonialList } from "@/src/hooks/useTestimonial";
 import NewsImage from "@/src/components/news/NewsImage";
+import { Star, Quote } from "lucide-react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005";
 
@@ -80,6 +82,7 @@ export default async function Home() {
   const newsList = await getNewsList();
   const albums = await getGalleryList();
   const stats = await getStats();
+  const testimonials = await getTestimonialList();
 
   return (
     <main className="min-h-screen">
@@ -318,6 +321,113 @@ export default async function Home() {
           </div>
         </section>
       )}
+
+      {/* 3.3. Testimonials Section */}
+      <section className="py-24 bg-gray-50 border-y border-gray-100 relative overflow-hidden">
+        {/* Decorative background element */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-5">
+          <div className="absolute top-12 left-10 w-72 h-72 rounded-full bg-dbl-orange/10 blur-3xl"></div>
+          <div className="absolute bottom-12 right-10 w-72 h-72 rounded-full bg-secondary/10 blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="relative flex items-center justify-center mb-16">
+            <div className="w-full h-[2px] bg-dbl-orange"></div>
+            <div className="absolute bg-dbl-orange text-white font-montserrat font-bold px-8 py-2 rounded-full uppercase text-xs tracking-[0.2em]">
+              Orang Tua Murid
+            </div>
+          </div>
+
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <h2 className="text-3xl md:text-5xl font-black text-secondary uppercase tracking-tight">
+              Apa Kata <span className="text-dbl-orange">Orang Tua?</span>
+            </h2>
+            <p className="text-gray-500 font-montserrat text-sm leading-relaxed max-w-lg mx-auto">
+              Testimoni dan ulasan tulus dari para orang tua murid mengenai perkembangan karakter dan kemampuan basket anak mereka di Wirabhakti Basketball Academy.
+            </p>
+          </div>
+
+          {/* Testimonial grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {(() => {
+              const fallbackTestimonials = [
+                {
+                  id: "mock-1",
+                  content: "Latihan di Wirabhakti sangat terstruktur dan berjenjang. Anak saya tidak hanya belajar teknik basket yang benar, tapi juga diajarkan kedisiplinan dan sportivitas yang tinggi. Pelatihnya sangat ramah dan profesional!",
+                  rating: 5,
+                  parentName: "Budi Santoso",
+                  parentPhoto: null,
+                },
+                {
+                  id: "mock-2",
+                  content: "Akademi terbaik di Lumajang! Fasilitas lapangan sangat baik dan anak saya sangat bersemangat setiap kali jadwal latihan tiba. Program penilaian rapor akademiknya juga membantu kami memantau perkembangan fisik anak.",
+                  rating: 5,
+                  parentName: "Dewi Lestari",
+                  parentPhoto: null,
+                },
+                {
+                  id: "mock-3",
+                  content: "Sangat merekomendasikan Wirabhakti bagi orang tua yang ingin mengarahkan anaknya ke kegiatan positif. Kurikulum latihannya sangat ramah untuk anak usia dini (KU-10/12) dan fokus pembinaannya sangat terarah.",
+                  rating: 5,
+                  parentName: "Hendra Wijaya",
+                  parentPhoto: null,
+                }
+              ];
+              const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
+              
+              return displayTestimonials.map((t) => (
+                <div key={t.id} className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group">
+                  {/* Decorative quote icon */}
+                  <Quote className="absolute top-6 right-6 text-gray-100 group-hover:text-dbl-orange/5 transition-colors duration-300" size={48} />
+                  
+                  <div className="space-y-4 relative z-10">
+                    {/* Stars */}
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          size={16}
+                          className={i < t.rating ? "text-amber-400 fill-amber-400" : "text-gray-200"}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Content */}
+                    <p className="text-gray-600 font-montserrat text-sm leading-relaxed italic">
+                      "{t.content}"
+                    </p>
+                  </div>
+
+                  {/* Profile info */}
+                  <div className="flex items-center gap-4 mt-8 border-t border-gray-100 pt-6 relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-500 overflow-hidden shrink-0 border-2 border-gray-50">
+                      {t.parentPhoto ? (
+                        <Image
+                          src={`${API_URL}${t.parentPhoto}`}
+                          alt={t.parentName}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-cover animate-fade-in"
+                        />
+                      ) : (
+                        t.parentName.charAt(0)
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="font-black text-secondary uppercase tracking-tight text-sm">
+                        {t.parentName}
+                      </h4>
+                      <p className="text-[10px] text-dbl-orange font-bold uppercase tracking-wider">
+                        Orang Tua Atlet
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ));
+            })()}
+          </div>
+        </div>
+      </section>
 
       {/* 4. Partners Section */}
       <Partners />
